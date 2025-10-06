@@ -1,0 +1,142 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { Title } from "@telegram-apps/telegram-ui";
+
+import { catalogApi, getCategoryTags } from "@/entities/book/api";
+import type { Book, ID } from "@/entities/book/types";
+import type { Category } from "@/entities/category/types";
+import { BookCard } from "@/entities/book/components/BookCard";
+import { useDebouncedValue } from "@/shared/hooks/useDebouncedValue";
+import { useIntersectionObserver } from "@/shared/hooks/useIntersectionObserver";
+import type { BookSort } from "@/shared/lib/bookSort";
+import { EmptyState } from "@/shared/ui/EmptyState";
+import { ErrorBanner } from "@/shared/ui/ErrorBanner";
+import { BookCardSkeleton } from "@/shared/ui/Skeletons";
+import { FiltersBar } from "@/widgets/FiltersBar/FiltersBar";
+
+export default function CategoryBooks(): JSX.Element {
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: ID }>();
+  const [category, setCategory] = useState<Category | null>(null);
+  const [books, setBooks] = useState<Book[]>([]);
+  const [cursor, setCursor] = useState<string | undefined>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState<BookSort>("popular");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const debouncedSearch = useDebouncedValue(search, 250);
+
+  const availableTags = useMemo(() => (id ? getCategoryTags(id) : []), [id]);
+  const cursorRef = useRef<string | undefined>();
+
+  const loadCategory = useCallback(async () => {
+    if (!id) {
+      return;
+    }
+
+    try {
+      const allCategories = await catalogApi.listCategories();
+      const current = allCategories.find((item) => item.id === id) ?? null;
+      setCategory(current);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Не удалось получить категорию");
+    }
+  }, [id]);
+
+  const loadBooks = useCallback(
+    async (reset = false) => {
+      if (!id) {
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        setError(null);
+        const response = await catalogApi.listBooks({
+          categoryId: id,
+          cursor: reset ? undefined : cursorRef.current,
+          search: debouncedSearch || undefined,
+          sort,
+          tags: selectedTags.length > 0 ? selectedTags : undefined,
+        });
+        setCursor(response.nextCursor);
+        setBooks((prev) => (reset ? response.items : [...prev, ...response.items]));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Не удалось загрузить книги");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [debouncedSearch, id, selectedTags, sort],
+  );
+
+  useEffect(() => {
+    cursorRef.current = cursor;
+  }, [cursor]);
+
+  useEffect(() => {
+    void loadCategory();
+  }, [loadCategory]);
+
+  useEffect(() => {
+    setBooks([]);
+    setCursor(undefined);
+    void loadBooks(true);
+  }, [debouncedSearch, id, loadBooks, selectedTags, sort]);
+
+  const handleIntersect = useCallback(() => {
+    if (!isLoading && cursorRef.current) {
+      void loadBooks(false);
+    }
+  }, [isLoading, loadBooks]);
+
+  const sentinelRef = useIntersectionObserver(handleIntersect);
+
+  if (!id) {
+    return <ErrorBanner message="Категория не найдена" />;
+  }
+
+  return (
+    <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
+      <Title level="1" weight="2" style={{ marginBottom: 16 }}>
+        {category?.title ?? "Категория"}
+      </Title>
+      <FiltersBar
+        search={search}
+        onSearchChange={setSearch}
+        sort={sort}
+        onSortChange={setSort}
+        tags={availableTags}
+        selectedTags={selectedTags}
+        onToggleTag={(tag) =>
+          setSelectedTags((current) =>
+            current.includes(tag) ? current.filter((item) => item !== tag) : [...current, tag],
+          )
+        }
+      />
+      {error && <ErrorBanner message={error} onRetry={() => loadBooks(true)} />}
+      <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 16 }}>
+        {books.map((book) => (
+          <BookCard key={book.id} book={book} onClick={() => navigate(`/book/${book.id}`)} />
+        ))}
+        {isLoading && books.length === 0 && (
+          <>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <BookCardSkeleton key={index} />
+            ))}
+          </>
+        )}
+        {!isLoading && books.length === 0 && !error && (
+          <EmptyState
+            title="Ничего не найдено"
+            description="Измените фильтры или попробуйте другой запрос"
+          />
+        )}
+        <div ref={sentinelRef} style={{ height: 1 }} />
+        {isLoading && books.length > 0 && <BookCardSkeleton />}
+      </div>
+    </main>
+  );
+}
