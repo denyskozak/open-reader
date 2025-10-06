@@ -1,5 +1,7 @@
 {
-  "url": "https://ton.vote",
-  "name": "TON Vote",
-  "iconUrl": "https://ton.vote/logo.png"
+  "url": "https://example.com",
+  "name": "Open Reader",
+  "iconUrl": "https://placehold.co/120x120/171717/FFFFFF?text=OR",
+  "termsOfUseUrl": "https://example.com/terms",
+  "privacyPolicyUrl": "https://example.com/privacy"
 }

@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "outDir": "./dist-test",
+    "rootDir": "./src",
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node", "vite/client"]
+  },
+  "include": [
+    "src/shared/lib/**/*.ts",
+    "src/shared/lib/__tests__/**/*.ts"
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fantasy",
+    "title": "Фэнтези",
+    "slug": "fantasy",
+    "emoji": "🧙",
+    "booksCount": 9
+  },
+  {
+    "id": "sci-fi",
+    "title": "Научная фантастика",
+    "slug": "sci-fi",
+    "emoji": "🚀",
+    "booksCount": 8
+  },
+  {
+    "id": "mystery",
+    "title": "Детективы",
+    "slug": "mystery",
+    "emoji": "🕵️",
+    "booksCount": 7
+  },
+  {
+    "id": "romance",
+    "title": "Романы",
+    "slug": "romance",
+    "emoji": "💞",
+    "booksCount": 7
+  },
+  {
+    "id": "history",
+    "title": "История",
+    "slug": "history",
+    "emoji": "🏛️",
+    "booksCount": 7
+  },
+  {
+    "id": "self-dev",
+    "title": "Саморазвитие",
+    "slug": "self-development",
+    "emoji": "🌱",
+    "booksCount": 6
+  },
+  {
+    "id": "business",
+    "title": "Бизнес",
+    "slug": "business",
+    "emoji": "💼",
+    "booksCount": 7
+  },
+  {
+    "id": "non-fiction",
+    "title": "Популярная наука",
+    "slug": "non-fiction",
+    "emoji": "🔬",
+    "booksCount": 9
+  }
+]
