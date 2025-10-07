@@ -12,7 +12,17 @@ const MAX_DELAY = 600;
 const DEFAULT_PAGE_SIZE = 10;
 
 const categories: Category[] = categoriesData as Category[];
-const books: Book[] = booksData as Book[];
+type RawBook = Omit<Book, "priceStars"> & { priceStars?: number };
+
+const books: Book[] = (booksData as RawBook[]).map((item, index) => {
+  const baseRating = Math.max(1, Math.round(item.rating.average));
+  const fallbackPrice = Math.min(10, baseRating + 3 + (index % 3));
+
+  return {
+    ...item,
+    priceStars: item.priceStars ?? fallbackPrice,
+  };
+});
 const reviews: Review[] = reviewsData as Review[];
 
 const categoryTagCache = new Map<ID, string[]>();

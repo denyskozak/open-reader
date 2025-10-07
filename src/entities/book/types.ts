@@ -9,6 +9,7 @@ export type Book = {
   categories: ID[];
   coverUrl: string;
   description: string;
+  priceStars: number;
   rating: {
     average: number;
     votes: number;
