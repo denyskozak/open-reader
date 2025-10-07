@@ -47,12 +47,14 @@ function AppContent(): JSX.Element {
 
   return (
     <AppRoot>
-      <HeaderBar />
-      <DemoBanner visible={!isTelegram} />
-      <div style={{ paddingBottom: 24 }}>
-        <AppRouter />
-      </div>
-      <NavigationControls />
+      <ToastProvider>
+        <HeaderBar />
+        <DemoBanner visible={!isTelegram} />
+        <div style={{ paddingBottom: 24 }}>
+          <AppRouter />
+        </div>
+        <NavigationControls />
+      </ToastProvider>
     </AppRoot>
   );
 }
@@ -65,9 +67,7 @@ export default function App(): JSX.Element {
       <TonConnectUIProvider manifestUrl={manifestUrl} uiPreferences={{ theme: "SYSTEM" }}>
         <TMAProvider>
           <ThemeProvider>
-            <ToastProvider>
-              <AppContent />
-            </ToastProvider>
+            <AppContent />
           </ThemeProvider>
         </TMAProvider>
       </TonConnectUIProvider>
