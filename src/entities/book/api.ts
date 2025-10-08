@@ -87,9 +87,14 @@ export function getCategoryTags(categoryId: ID): string[] {
   }
 
   const relatedBooks = books.filter((book) => book.categories.includes(categoryId));
-  const tags = Array.from(new Set(relatedBooks.flatMap((book) => book.tags))).sort((a, b) =>
-    a.localeCompare(b, "ru"),
-  );
+  const uniqueTags = Array.from(new Set(relatedBooks.flatMap((book) => book.tags)));
+
+  for (let i = uniqueTags.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [uniqueTags[i], uniqueTags[j]] = [uniqueTags[j], uniqueTags[i]];
+  }
+
+  const tags = uniqueTags.slice(0, 9);
   categoryTagCache.set(categoryId, tags);
   return tags;
 }
