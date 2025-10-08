@@ -46,7 +46,7 @@ function AppContent(): JSX.Element {
   const { isTelegram } = useTMA();
 
   return (
-    <AppRoot>
+    <AppRoot style={{ marginTop: '10vh' }}>
       <ToastProvider>
         <HeaderBar />
         <DemoBanner visible={!isTelegram} />

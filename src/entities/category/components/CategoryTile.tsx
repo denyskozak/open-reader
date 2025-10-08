@@ -15,7 +15,7 @@ export function CategoryTile({ category, onClick }: CategoryTileProps): JSX.Elem
       interactiveAnimation="background"
       aria-label={`Категория ${category.title}`}
     >
-      <Card style={{ padding: 16, borderRadius: 20, minHeight: 140 }}>
+      <Card style={{ width: '80%', padding: 16, borderRadius: 20, minHeight: 140 }}>
         <div style={{ fontSize: 32, marginBottom: 12 }}>{category.emoji ?? "📚"}</div>
         <Title weight="2" level="3" style={{ marginBottom: 8 }}>
           {category.title}
