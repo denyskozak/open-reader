@@ -1,5 +1,6 @@
 import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useLaunchParams } from '@telegram-apps/sdk-react';
 
 import { AppRoot } from "@telegram-apps/telegram-ui";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
@@ -44,9 +45,10 @@ function NavigationControls(): null {
 
 function AppContent(): JSX.Element {
   const { isTelegram } = useTMA();
+  const { tgWebAppFullscreen } = useLaunchParams();
 
   return (
-    <AppRoot style={{ marginTop: '10vh' }}>
+    <AppRoot style={{ marginTop: tgWebAppFullscreen ? '10vh' : 0 }}>
       <ToastProvider>
         <HeaderBar />
         <DemoBanner visible={!isTelegram} />
