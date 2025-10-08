@@ -5,6 +5,12 @@ import { Input, Title } from "@telegram-apps/telegram-ui";
 
 import { CategoryTile } from "@/entities/category/components/CategoryTile";
 import type { Category } from "@/entities/category/types";
+import {
+  SPECIAL_CATEGORIES,
+  SPECIAL_CATEGORY_MAP,
+  type SpecialCategory,
+  isSpecialCategoryId,
+} from "@/entities/category/customCategories";
 import { catalogApi } from "@/entities/book/api";
 import { useDebouncedValue } from "@/shared/hooks/useDebouncedValue";
 import { EmptyState } from "@/shared/ui/EmptyState";
@@ -50,6 +56,27 @@ export default function HomeCategories(): JSX.Element {
     };
   }, [debouncedSearch, refreshToken]);
 
+  const normalizedSearch = debouncedSearch.trim().toLocaleLowerCase();
+
+  const specialCategories: SpecialCategory[] = normalizedSearch
+    ? SPECIAL_CATEGORIES.filter((category) =>
+        [category.title, category.slug].some((value) =>
+          value.toLocaleLowerCase().includes(normalizedSearch),
+        ),
+      )
+    : SPECIAL_CATEGORIES;
+
+  const displayedCategories: Category[] = [...specialCategories, ...categories];
+
+  const handleCategoryClick = (category: Category) => {
+    if (isSpecialCategoryId(category.id)) {
+      navigate(SPECIAL_CATEGORY_MAP[category.id].path);
+      return;
+    }
+
+    navigate(`/category/${category.id}`);
+  };
+
   return (
     <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
       <Title level="1" weight="2" style={{ marginBottom: 16 }}>
@@ -64,16 +91,20 @@ export default function HomeCategories(): JSX.Element {
         style={{ marginBottom: 16 }}
       />
       {error && <ErrorBanner message={error} onRetry={() => setRefreshToken((prev) => prev + 1)} />}
-      {isLoading && categories.length === 0 ? (
+      {isLoading && displayedCategories.length === 0 ? (
         <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}>
           {Array.from({ length: 6 }).map((_, index) => (
             <CategoryTileSkeleton key={index} />
           ))}
         </div>
-      ) : categories.length > 0 ? (
+      ) : displayedCategories.length > 0 ? (
         <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}>
-          {categories.map((category) => (
-            <CategoryTile key={category.id} category={category} onClick={() => navigate(`/category/${category.id}`)} />
+          {displayedCategories.map((category) => (
+            <CategoryTile
+              key={category.id}
+              category={category}
+              onClick={() => handleCategoryClick(category)}
+            />
           ))}
         </div>
       ) : (
