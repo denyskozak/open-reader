@@ -1,0 +1,95 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { Title } from "@telegram-apps/telegram-ui";
+
+import { catalogApi } from "@/entities/book/api";
+import type { Book } from "@/entities/book/types";
+import {
+  SPECIAL_CATEGORY_MAP,
+  type SpecialCategoryId,
+  isSpecialCategoryId,
+} from "@/entities/category/customCategories";
+import { BookCard } from "@/entities/book/components/BookCard";
+import { EmptyState } from "@/shared/ui/EmptyState";
+import { ErrorBanner } from "@/shared/ui/ErrorBanner";
+import { BookCardSkeleton } from "@/shared/ui/Skeletons";
+
+export default function TopBooks(): JSX.Element {
+  const navigate = useNavigate();
+  const { type } = useParams<{ type: string }>();
+  const categoryId = type && isSpecialCategoryId(type) ? (type as SpecialCategoryId) : null;
+  const category = categoryId ? SPECIAL_CATEGORY_MAP[categoryId] : null;
+  const [books, setBooks] = useState<Book[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [refreshToken, setRefreshToken] = useState(0);
+
+  useEffect(() => {
+    if (!category) {
+      return;
+    }
+
+    let cancelled = false;
+
+    const load = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        setBooks([]);
+        const response = await catalogApi.listBooks({
+          limit: category.booksCount,
+          sort: category.sort,
+        });
+        if (!cancelled) {
+          setBooks(response.items);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : "Не удалось загрузить книги");
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void load();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [category, refreshToken]);
+
+  const handleRetry = () => setRefreshToken((prev) => prev + 1);
+
+  if (!category) {
+    return <ErrorBanner message="Категория не найдена" onRetry={() => navigate("/")} />;
+  }
+
+  return (
+    <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
+      <Title level="1" weight="2" style={{ marginBottom: 16 }}>
+        {category.title}
+      </Title>
+      {error && <ErrorBanner message={error} onRetry={handleRetry} />}
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        {books.map((book) => (
+          <BookCard key={book.id} book={book} onClick={() => navigate(`/book/${book.id}`)} />
+        ))}
+        {isLoading && books.length === 0 && (
+          <>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <BookCardSkeleton key={index} />
+            ))}
+          </>
+        )}
+        {!isLoading && books.length === 0 && !error && (
+          <EmptyState title="Ничего не найдено" description="Попробуйте обновить страницу позже" />
+        )}
+        {isLoading && books.length > 0 && <BookCardSkeleton />}
+      </div>
+    </main>
+  );
+}
