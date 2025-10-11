@@ -25,8 +25,8 @@ export function HeaderBar(): JSX.Element {
   return (
     <header
       style={{
-        position: "absolute",
-        top: 0,
+        // position: "absolute",
+        // top: 0,
         zIndex: 9,
         background: theme.background,
         borderBottom: `1px solid ${theme.separator}`,
