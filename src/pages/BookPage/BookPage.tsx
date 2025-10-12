@@ -31,6 +31,7 @@ export default function BookPage(): JSX.Element {
   const [activeAction, setActiveAction] = useState<"buy" | "subscribe" | null>(null);
   const [isPurchaseModalOpen, setPurchaseModalOpen] = useState(false);
   const [isReading, setIsReading] = useState(false);
+  const [isPreviewMode, setIsPreviewMode] = useState(false);
 
   const loadBook = useCallback(async () => {
     if (!id) {
@@ -69,15 +70,26 @@ export default function BookPage(): JSX.Element {
     reviewsRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
+  const handlePreview = useCallback(() => {
+    if (!book) {
+      return;
+    }
+
+    setIsPreviewMode(true);
+    setIsReading(true);
+  }, [book]);
+
   const handleRead = useCallback(() => {
     if (!book) {
       return;
     }
 
+    setIsPreviewMode(false);
     setIsReading(true);
   }, [book]);
 
   const handleCloseReader = useCallback(() => {
+    setIsPreviewMode(false);
     setIsReading(false);
   }, []);
 
@@ -113,6 +125,7 @@ export default function BookPage(): JSX.Element {
   const handleConfirmPurchase = useCallback(() => {
     setPurchaseModalOpen(false);
     setIsPurchased(true);
+    setIsPreviewMode(false);
     setActiveAction(null);
     setIsActionLoading(false);
     showToast(t("book.toast.accessGranted"));
@@ -146,14 +159,15 @@ export default function BookPage(): JSX.Element {
     setActiveAction(null);
     setPurchaseModalOpen(false);
     setIsActionLoading(false);
+    setIsPreviewMode(false);
     setIsReading(false);
   }, [id]);
 
   useEffect(() => {
-    if (!isPurchased && isReading) {
+    if (!isPurchased && isReading && !isPreviewMode) {
       setIsReading(false);
     }
-  }, [isPurchased, isReading]);
+  }, [isPurchased, isPreviewMode, isReading]);
 
   useEffect(() => {
     void loadBook();
@@ -278,6 +292,9 @@ export default function BookPage(): JSX.Element {
                     onClick={() => handleMockAction("subscribe")}
                   >
                     {t("book.actions.subscribe")}
+                  </Button>
+                  <Button size="l" mode="outline" disabled={isActionLoading} onClick={handlePreview}>
+                    {t("book.actions.preview")}
                   </Button>
                 </div>
               )}
