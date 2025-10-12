@@ -1,5 +1,5 @@
 import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState, type TransitionEvent } from "react";
+import {useEffect, useState, type TransitionEvent, useMemo} from "react";
 import { useLaunchParams } from '@telegram-apps/sdk-react';
 
 import { AppRoot } from "@telegram-apps/telegram-ui";
@@ -12,10 +12,14 @@ import { ToastProvider } from "@/shared/ui/ToastProvider";
 import { DemoBanner } from "@/shared/ui/DemoBanner";
 import { FooterBar } from "@/widgets/FooterBar/FooterBar";
 import { HeaderBar } from "@/widgets/HeaderBar/HeaderBar";
+import {themePalette} from "@/shared/config";
+import {getSystemTheme, ReaderTheme} from "@/shared/lib";
 
 function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
   const [shouldRender, setShouldRender] = useState(visible);
+    const theme = useMemo<ReaderTheme>(() => getSystemTheme(), []);
 
+    console.log("theme: ", theme);
   useEffect(() => {
     if (visible) {
       setShouldRender(true);
@@ -41,6 +45,7 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: themePalette[theme].background,
         zIndex: 9999,
         opacity: visible ? 1 : 0,
         transition: "opacity 400ms ease",
@@ -49,8 +54,8 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
     >
       <div
         style={{
-          width: 30,
-          height: 30,
+          width: 126,
+          height: 126,
           borderRadius: "50%",
           backgroundColor: "#fff",
           display: "flex",
@@ -62,8 +67,8 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
           src="/logo.webp"
           alt="Open Reader logo"
           style={{
-            width: 24,
-            height: 24,
+            width: 96,
+            height: 96,
             objectFit: "contain",
           }}
         />
@@ -111,7 +116,7 @@ function AppContent(): JSX.Element {
     useEffect(() => {
         const timeoutId = window.setTimeout(() => {
             setIsSplashVisible(false);
-        }, 2000);
+        }, 1500);
         return () => { clearTimeout(timeoutId); };
     }, []);
 
