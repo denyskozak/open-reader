@@ -12,6 +12,7 @@ import { ReviewsList } from "@/widgets/ReviewsList/ReviewsList";
 import { ErrorBanner } from "@/shared/ui/ErrorBanner";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { useToast } from "@/shared/ui/ToastProvider";
+import { ReadingOverlay } from "./ReadingOverlay";
 
 export default function BookPage(): JSX.Element {
   const { id } = useParams<{ id: ID }>();
@@ -29,6 +30,7 @@ export default function BookPage(): JSX.Element {
   const [isActionLoading, setIsActionLoading] = useState(false);
   const [activeAction, setActiveAction] = useState<"buy" | "subscribe" | null>(null);
   const [isPurchaseModalOpen, setPurchaseModalOpen] = useState(false);
+  const [isReading, setIsReading] = useState(false);
 
   const loadBook = useCallback(async () => {
     if (!id) {
@@ -68,12 +70,16 @@ export default function BookPage(): JSX.Element {
   }, []);
 
   const handleRead = useCallback(() => {
-    if (!id) {
+    if (!book) {
       return;
     }
 
-    navigate(`/reader/${id}`);
-  }, [id, navigate]);
+    setIsReading(true);
+  }, [book]);
+
+  const handleCloseReader = useCallback(() => {
+    setIsReading(false);
+  }, []);
 
   const handleDownload = useCallback(() => {
     if (!id) {
@@ -140,7 +146,14 @@ export default function BookPage(): JSX.Element {
     setActiveAction(null);
     setPurchaseModalOpen(false);
     setIsActionLoading(false);
+    setIsReading(false);
   }, [id]);
+
+  useEffect(() => {
+    if (!isPurchased && isReading) {
+      setIsReading(false);
+    }
+  }, [isPurchased, isReading]);
 
   useEffect(() => {
     void loadBook();
@@ -334,6 +347,7 @@ export default function BookPage(): JSX.Element {
           </Button>
         </div>
       </Modal>
+      {book && isReading && <ReadingOverlay book={book} onClose={handleCloseReader} />}
     </>
   );
 }
