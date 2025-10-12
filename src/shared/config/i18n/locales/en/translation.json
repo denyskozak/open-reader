@@ -92,6 +92,25 @@
       "subscribe": "Subscribe",
       "confirm": "Complete"
     },
+    "reader": {
+      "title": "Reading mode",
+      "close": "Close",
+      "fontLabel": "Text size",
+      "fontDecrease": "Decrease text size",
+      "fontIncrease": "Increase text size",
+      "theme": {
+        "light": "Light",
+        "sepia": "Sepia",
+        "dark": "Dark"
+      },
+      "demoNotice": "Demo excerpt to preview the book.",
+      "unknownAuthor": "an unknown author",
+      "sampleIntro": "An excerpt from \"{{title}}\" written by {{author}}.",
+      "sampleMiddle": "The heroes dive into {{focus}}, and every page is filled with anticipation.",
+      "sampleOutro": "Continue reading after purchase or subscription.",
+      "sampleFocusTag": "the world of \"{{tag}}\"",
+      "sampleFocusFallback": "uncharted worlds"
+    },
     "toast": {
       "linkCopied": "Link copied",
       "linkFailed": "Could not copy the link",
