@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "b1",
+    "title": "Chronicles of the Silver Storm",
+    "authors": [
+      "Alena Mirskaya"
+    ],
+    "categories": [
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/302b63/ffffff?text=Storm",
+    "description": "A young mage must join forces with an exiled knight to stop an ancient storm that threatens the kingdom.",
+    "rating": {
+      "average": 4.6,
+      "votes": 812
+    },
+    "tags": [
+      "magic",
+      "adventure",
+      "dragons"
+    ],
+    "publishedAt": "2023-02-14",
+    "reviewsCount": 214
+  },
+  {
+    "id": "b2",
+    "title": "Legend of the Glass City",
+    "authors": [
+      "Ivan Orlov"
+    ],
+    "categories": [
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Glass",
+    "description": "The guardian of a city made of glass investigates the disappearance of its source of magic and uncovers a council conspiracy.",
+    "rating": {
+      "average": 4.3,
+      "votes": 540
+    },
+    "tags": [
+      "magic",
+      "intrigue",
+      "urban fantasy"
+    ],
+    "publishedAt": "2022-08-01",
+    "reviewsCount": 189
+  },
+  {
+    "id": "b3",
+    "title": "Dance of Shadows",
+    "authors": [
+      "Sergey Kotov"
+    ],
+    "categories": [
+      "fantasy",
+      "mystery"
+    ],
+    "coverUrl": "https://placehold.co/480x270/111827/ffffff?text=Shadows",
+    "description": "An investigator from the spirit world unravels murders taking place simultaneously across two realities.",
+    "rating": {
+      "average": 4.7,
+      "votes": 901
+    },
+    "tags": [
+      "dark fantasy",
+      "detective",
+      "spirits"
+    ],
+    "publishedAt": "2024-01-10",
+    "reviewsCount": 276
+  },
+  {
+    "id": "b4",
+    "title": "Call of the Abyss",
+    "authors": [
+      "Maria Yasnaya"
+    ],
+    "categories": [
+      "fantasy",
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Abyss",
+    "description": "A starship crew encounters the ancient gods left behind by a fallen civilization.",
+    "rating": {
+      "average": 4.1,
+      "votes": 420
+    },
+    "tags": [
+      "space",
+      "mythology",
+      "adventure"
+    ],
+    "publishedAt": "2021-09-19",
+    "reviewsCount": 132
+  },
+  {
+    "id": "b5",
+    "title": "The Last Tower",
+    "authors": [
+      "Lev Pogodin"
+    ],
+    "categories": [
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/4c1d95/ffffff?text=Tower",
+    "description": "An archmage’s apprentice must save the tower of knowledge before the void of forgotten spells consumes it.",
+    "rating": {
+      "average": 4.5,
+      "votes": 610
+    },
+    "tags": [
+      "apprentices",
+      "spells",
+      "heroine"
+    ],
+    "publishedAt": "2020-05-30",
+    "reviewsCount": 201
+  },
+  {
+    "id": "b6",
+    "title": "Wings of the Northern Wind",
+    "authors": [
+      "Svetlana Rey"
+    ],
+    "categories": [
+      "fantasy",
+      "romance"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1e40af/ffffff?text=Wind",
+    "description": "A princess of the northern kingdom falls for a captive dragonslayer who hides a magical gift.",
+    "rating": {
+      "average": 4.4,
+      "votes": 488
+    },
+    "tags": [
+      "romance",
+      "politics",
+      "dragons"
+    ],
+    "publishedAt": "2023-11-07",
+    "reviewsCount": 167
+  },
+  {
+    "id": "b7",
+    "title": "Misty Legacy",
+    "authors": [
+      "Dmitry Astakhov"
+    ],
+    "categories": [
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Mist",
+    "description": "An orphan returns home to claim an inheritance and is drawn into a war between magical clans.",
+    "rating": {
+      "average": 4,
+      "votes": 320
+    },
+    "tags": [
+      "magical clans",
+      "family",
+      "journey"
+    ],
+    "publishedAt": "2019-03-15",
+    "reviewsCount": 98
+  },
+  {
+    "id": "b8",
+    "title": "Orbit of Memory",
+    "authors": [
+      "Natalia Krylova"
+    ],
+    "categories": [
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Orbit",
+    "description": "A scientist restores the memory of a Martian colony, erasing false recollections and exposing sabotage.",
+    "rating": {
+      "average": 4.6,
+      "votes": 760
+    },
+    "tags": [
+      "mars",
+      "artificial intelligence",
+      "thriller"
+    ],
+    "publishedAt": "2024-04-12",
+    "reviewsCount": 245
+  },
+  {
+    "id": "b9",
+    "title": "Singularity Tomorrow",
+    "authors": [
+      "Kirill More"
+    ],
+    "categories": [
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/052e16/ffffff?text=Singularity",
+    "description": "A hacker tries to stop the launch of a quantum network that could enslave human consciousness.",
+    "rating": {
+      "average": 4.2,
+      "votes": 530
+    },
+    "tags": [
+      "cyberpunk",
+      "quantum tech",
+      "thriller"
+    ],
+    "publishedAt": "2022-12-05",
+    "reviewsCount": 156
+  },
+  {
+    "id": "b10",
+    "title": "Limits of Dawn",
+    "authors": [
+      "Oksana Vega"
+    ],
+    "categories": [
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/164e63/ffffff?text=Dawn",
+    "description": "An exploration pilot meets parallel versions of herself and must choose a single path for humanity.",
+    "rating": {
+      "average": 4.8,
+      "votes": 910
+    },
+    "tags": [
+      "multiverse",
+      "psychology",
+      "space"
+    ],
+    "publishedAt": "2023-06-18",
+    "reviewsCount": 312
+  },
+  {
+    "id": "b11",
+    "title": "City Under the Dome",
+    "authors": [
+      "Roman Tsoy"
+    ],
+    "categories": [
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/14532d/ffffff?text=Dome",
+    "description": "Inside a climate-controlled dome, revolution brews, and an engineer must decide whether to shut the system down.",
+    "rating": {
+      "average": 3.9,
+      "votes": 402
+    },
+    "tags": [
+      "dystopia",
+      "ecology",
+      "drama"
+    ],
+    "publishedAt": "2020-10-22",
+    "reviewsCount": 120
+  },
+  {
+    "id": "b12",
+    "title": "Light of Cold Stars",
+    "authors": [
+      "Elizaveta Ray"
+    ],
+    "categories": [
+      "sci-fi",
+      "romance"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Stars",
+    "description": "A space researcher and a rogue pilot are stranded on an ice world and must learn to trust each other.",
+    "rating": {
+      "average": 4.4,
+      "votes": 470
+    },
+    "tags": [
+      "survival",
+      "romance",
+      "space"
+    ],
+    "publishedAt": "2021-02-11",
+    "reviewsCount": 158
+  },
+  {
+    "id": "b13",
+    "title": "Algorithm of Hope",
+    "authors": [
+      "Mikhail Zharov"
+    ],
+    "categories": [
+      "sci-fi",
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/134e4a/ffffff?text=Hope",
+    "description": "A semi-documentary tale about how a neural network helps humanity survive a global crisis of trust.",
+    "rating": {
+      "average": 4,
+      "votes": 388
+    },
+    "tags": [
+      "neural networks",
+      "social sci-fi",
+      "ethics"
+    ],
+    "publishedAt": "2019-11-29",
+    "reviewsCount": 102
+  },
+  {
+    "id": "b14",
+    "title": "Code of Silence",
+    "authors": [
+      "Timur Safin"
+    ],
+    "categories": [
+      "sci-fi"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0b1120/ffffff?text=Code",
+    "description": "A language designed for alien negotiations becomes the key to unlocking the secrets of human memory.",
+    "rating": {
+      "average": 4.5,
+      "votes": 655
+    },
+    "tags": [
+      "linguistics",
+      "aliens",
+      "thriller"
+    ],
+    "publishedAt": "2024-03-05",
+    "reviewsCount": 220
+  },
+  {
+    "id": "b15",
+    "title": "The Antique Key",
+    "authors": [
+      "Anna Vetrova"
+    ],
+    "categories": [
+      "mystery"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Key",
+    "description": "A detective and a conservator search for the owner of a key found in an old mansion and reveal a vanished family’s secret.",
+    "rating": {
+      "average": 4.2,
+      "votes": 430
+    },
+    "tags": [
+      "history",
+      "family mystery",
+      "detective"
+    ],
+    "publishedAt": "2020-07-07",
+    "reviewsCount": 140
+  },
+  {
+    "id": "b16",
+    "title": "Lies on the Shore",
+    "authors": [
+      "Georgy Sinkov"
+    ],
+    "categories": [
+      "mystery"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Shore",
+    "description": "A journalist returns to a seaside hometown to investigate the disappearance of a friend twenty years ago.",
+    "rating": {
+      "average": 4.1,
+      "votes": 350
+    },
+    "tags": [
+      "psychology",
+      "investigation",
+      "past secrets"
+    ],
+    "publishedAt": "2021-05-25",
+    "reviewsCount": 118
+  },
+  {
+    "id": "b17",
+    "title": "Station Mirror",
+    "authors": [
+      "Nina Lesnaya"
+    ],
+    "categories": [
+      "mystery",
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0b1120/ffffff?text=Mirror",
+    "description": "A mirror appears in an old train station showing future crimes, and a sleuth races to prevent tragedies.",
+    "rating": {
+      "average": 4.6,
+      "votes": 512
+    },
+    "tags": [
+      "mysticism",
+      "alternate future",
+      "detective"
+    ],
+    "publishedAt": "2023-09-14",
+    "reviewsCount": 204
+  },
+  {
+    "id": "b18",
+    "title": "Room 217",
+    "authors": [
+      "Vladimir Ronzhin"
+    ],
+    "categories": [
+      "mystery"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Room",
+    "description": "Guests vanish from a luxury hotel, forcing the manager to uncover the secret of a room no one can book.",
+    "rating": {
+      "average": 3.8,
+      "votes": 275
+    },
+    "tags": [
+      "thriller",
+      "hotel",
+      "intrigue"
+    ],
+    "publishedAt": "2018-12-02",
+    "reviewsCount": 77
+  },
+  {
+    "id": "b19",
+    "title": "The Architect's Cipher",
+    "authors": [
+      "Margarita Lis"
+    ],
+    "categories": [
+      "mystery",
+      "history"
+    ],
+    "coverUrl": "https://placehold.co/480x270/14532d/ffffff?text=Cipher",
+    "description": "A historian deciphers letters from an architect who hid directions to an order’s treasure.",
+    "rating": {
+      "average": 4.3,
+      "votes": 389
+    },
+    "tags": [
+      "puzzle",
+      "history",
+      "treasure"
+    ],
+    "publishedAt": "2022-04-30",
+    "reviewsCount": 135
+  },
+  {
+    "id": "b20",
+    "title": "Midnight Call",
+    "authors": [
+      "Alexander Shum"
+    ],
+    "categories": [
+      "mystery"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Call",
+    "description": "A psychologist investigates strange phone calls that predict the deaths of people in a small town.",
+    "rating": {
+      "average": 4,
+      "votes": 300
+    },
+    "tags": [
+      "suspense",
+      "psychology",
+      "small town"
+    ],
+    "publishedAt": "2023-01-03",
+    "reviewsCount": 110
+  },
+  {
+    "id": "b21",
+    "title": "Heart of the Ocean",
+    "authors": [
+      "Elena Chernova"
+    ],
+    "categories": [
+      "romance"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1e3a8a/ffffff?text=Ocean",
+    "description": "A marine biologist and a navigator fall in love while saving an island resort from an approaching storm.",
+    "rating": {
+      "average": 4.5,
+      "votes": 510
+    },
+    "tags": [
+      "sea",
+      "romance",
+      "vacation"
+    ],
+    "publishedAt": "2022-06-21",
+    "reviewsCount": 165
+  },
+  {
+    "id": "b22",
+    "title": "Letters Across the Years",
+    "authors": [
+      "Marina Veda"
+    ],
+    "categories": [
+      "romance",
+      "history"
+    ],
+    "coverUrl": "https://placehold.co/480x270/6b21a8/ffffff?text=Letters",
+    "description": "Childhood friends exchange letters over decades, rediscovering feelings amid life’s twists.",
+    "rating": {
+      "average": 4.7,
+      "votes": 648
+    },
+    "tags": [
+      "epistolary",
+      "second chance",
+      "friendship"
+    ],
+    "publishedAt": "2021-09-09",
+    "reviewsCount": 208
+  },
+  {
+    "id": "b23",
+    "title": "Lavender Season",
+    "authors": [
+      "Tatyana Lavr"
+    ],
+    "categories": [
+      "romance"
+    ],
+    "coverUrl": "https://placehold.co/480x270/7c3aed/ffffff?text=Lavender",
+    "description": "A chef moves to Provence to open a small bistro and learns to trust love again.",
+    "rating": {
+      "average": 4.1,
+      "votes": 360
+    },
+    "tags": [
+      "France",
+      "culinary",
+      "healing"
+    ],
+    "publishedAt": "2019-05-17",
+    "reviewsCount": 95
+  },
+  {
+    "id": "b24",
+    "title": "Pulse of the Metropolis",
+    "authors": [
+      "Daria Pshenichnaya"
+    ],
+    "categories": [
+      "romance",
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Pulse",
+    "description": "A doctor and an architect navigate careers and feelings while launching a community clinic in a megacity.",
+    "rating": {
+      "average": 4.3,
+      "votes": 402
+    },
+    "tags": [
+      "city life",
+      "career",
+      "romance"
+    ],
+    "publishedAt": "2023-03-28",
+    "reviewsCount": 142
+  },
+  {
+    "id": "b25",
+    "title": "Warmth of Winter Light",
+    "authors": [
+      "Ksenia Dal"
+    ],
+    "categories": [
+      "romance"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1c1917/ffffff?text=Light",
+    "description": "A photographer searching for inspiration travels to a mountain village and falls for the local chef.",
+    "rating": {
+      "average": 4,
+      "votes": 280
+    },
+    "tags": [
+      "winter",
+      "cozy",
+      "love"
+    ],
+    "publishedAt": "2020-12-15",
+    "reviewsCount": 88
+  },
+  {
+    "id": "b26",
+    "title": "Empires of Sand",
+    "authors": [
+      "Stanislav Rudoy"
+    ],
+    "categories": [
+      "history",
+      "fantasy"
+    ],
+    "coverUrl": "https://placehold.co/480x270/78350f/ffffff?text=Sand",
+    "description": "The fall of a desert empire told through the eyes of a chronicler who doubts the conquerors’ cause.",
+    "rating": {
+      "average": 4.4,
+      "votes": 520
+    },
+    "tags": [
+      "ancient world",
+      "politics",
+      "epic"
+    ],
+    "publishedAt": "2018-04-11",
+    "reviewsCount": 174
+  },
+  {
+    "id": "b27",
+    "title": "Chronicle of the Northern Route",
+    "authors": [
+      "Oleg Zhuravlev"
+    ],
+    "categories": [
+      "history"
+    ],
+    "coverUrl": "https://placehold.co/480x270/3f6212/ffffff?text=North",
+    "description": "A documentary-style account of a polar expedition and its impact on Arctic exploration.",
+    "rating": {
+      "average": 4.2,
+      "votes": 410
+    },
+    "tags": [
+      "expedition",
+      "Arctic",
+      "documentary"
+    ],
+    "publishedAt": "2020-01-20",
+    "reviewsCount": 130
+  },
+  {
+    "id": "b28",
+    "title": "Time of Troubles",
+    "authors": [
+      "Lyudmila Knyazeva"
+    ],
+    "categories": [
+      "history"
+    ],
+    "coverUrl": "https://placehold.co/480x270/422006/ffffff?text=Time",
+    "description": "A family of merchants struggles to survive during Russia’s seventeenth-century turmoil.",
+    "rating": {
+      "average": 4.1,
+      "votes": 355
+    },
+    "tags": [
+      "Russia",
+      "family",
+      "history"
+    ],
+    "publishedAt": "2017-09-05",
+    "reviewsCount": 111
+  },
+  {
+    "id": "b29",
+    "title": "The Silk Road",
+    "authors": [
+      "Azamat Rakhimov"
+    ],
+    "categories": [
+      "history",
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/854d0e/ffffff?text=Silk",
+    "description": "A study of the great trade route and its influence on the modern global economy.",
+    "rating": {
+      "average": 4.5,
+      "votes": 610
+    },
+    "tags": [
+      "economics",
+      "trade",
+      "history"
+    ],
+    "publishedAt": "2022-02-18",
+    "reviewsCount": 205
+  },
+  {
+    "id": "b30",
+    "title": "Voices of the Revolution",
+    "authors": [
+      "Inga Solovyova"
+    ],
+    "categories": [
+      "history"
+    ],
+    "coverUrl": "https://placehold.co/480x270/5b21b6/ffffff?text=Voices",
+    "description": "A collection of diaries and letters from participants in the early twentieth-century uprisings.",
+    "rating": {
+      "average": 3.9,
+      "votes": 290
+    },
+    "tags": [
+      "diaries",
+      "20th century",
+      "history"
+    ],
+    "publishedAt": "2021-01-31",
+    "reviewsCount": 94
+  },
+  {
+    "id": "b31",
+    "title": "Habit of Greatness",
+    "authors": [
+      "Igor Malyshev"
+    ],
+    "categories": [
+      "self-dev"
+    ],
+    "coverUrl": "https://placehold.co/480x270/155e75/ffffff?text=Habit",
+    "description": "A practical guide to building resilient habits with a focus on micro changes.",
+    "rating": {
+      "average": 4.3,
+      "votes": 780
+    },
+    "tags": [
+      "habits",
+      "motivation",
+      "productivity"
+    ],
+    "publishedAt": "2020-03-14",
+    "reviewsCount": 320
+  },
+  {
+    "id": "b32",
+    "title": "Mindfulness on the Run",
+    "authors": [
+      "Kira Fomin"
+    ],
+    "categories": [
+      "self-dev",
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/047857/ffffff?text=Mindful",
+    "description": "Keeping calm in a bustling city: breathing practices and short meditations.",
+    "rating": {
+      "average": 4.1,
+      "votes": 450
+    },
+    "tags": [
+      "mindfulness",
+      "health",
+      "meditation"
+    ],
+    "publishedAt": "2023-05-02",
+    "reviewsCount": 150
+  },
+  {
+    "id": "b33",
+    "title": "Leader’s Emotional Intelligence",
+    "authors": [
+      "Viktor Savin"
+    ],
+    "categories": [
+      "self-dev",
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/1e293b/ffffff?text=EQ",
+    "description": "How emotional intelligence shapes team leadership, with case studies from modern companies.",
+    "rating": {
+      "average": 4.4,
+      "votes": 690
+    },
+    "tags": [
+      "leadership",
+      "emotional intelligence",
+      "team"
+    ],
+    "publishedAt": "2022-07-19",
+    "reviewsCount": 240
+  },
+  {
+    "id": "b34",
+    "title": "The Discipline Path",
+    "authors": [
+      "Alexey Nemov"
+    ],
+    "categories": [
+      "self-dev"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Discipline",
+    "description": "A system for building discipline through small wins and tracking progress.",
+    "rating": {
+      "average": 4,
+      "votes": 520
+    },
+    "tags": [
+      "discipline",
+      "coaching",
+      "motivation"
+    ],
+    "publishedAt": "2019-06-06",
+    "reviewsCount": 180
+  },
+  {
+    "id": "b35",
+    "title": "The Power of Pauses",
+    "authors": [
+      "Ekaterina Lim"
+    ],
+    "categories": [
+      "self-dev"
+    ],
+    "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Pause",
+    "description": "How scheduled breaks and rest can boost productivity and creativity.",
+    "rating": {
+      "average": 4.2,
+      "votes": 470
+    },
+    "tags": [
+      "rest",
+      "balance",
+      "well-being"
+    ],
+    "publishedAt": "2021-08-24",
+    "reviewsCount": 156
+  },
+  {
+    "id": "b36",
+    "title": "Digital Strategies",
+    "authors": [
+      "Andrey Kotin"
+    ],
+    "categories": [
+      "business",
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0e7490/ffffff?text=Digital",
+    "description": "How companies adapt to digital change: strategies, case studies, and practical tools.",
+    "rating": {
+      "average": 4.5,
+      "votes": 620
+    },
+    "tags": [
+      "digital transformation",
+      "business",
+      "strategy"
+    ],
+    "publishedAt": "2023-02-10",
+    "reviewsCount": 210
+  },
+  {
+    "id": "b37",
+    "title": "Market of Ideas",
+    "authors": [
+      "Pavel Denisov"
+    ],
+    "categories": [
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Ideas",
+    "description": "Open innovation and ways to implement employee ideas in large organizations.",
+    "rating": {
+      "average": 4.1,
+      "votes": 380
+    },
+    "tags": [
+      "innovation",
+      "management",
+      "corporate culture"
+    ],
+    "publishedAt": "2020-11-30",
+    "reviewsCount": 122
+  },
+  {
+    "id": "b38",
+    "title": "Investor of a New Era",
+    "authors": [
+      "Olga Terekhova"
+    ],
+    "categories": [
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/78350f/ffffff?text=Investor",
+    "description": "A hands-on investment guide for navigating volatility and uncertainty.",
+    "rating": {
+      "average": 4.3,
+      "votes": 560
+    },
+    "tags": [
+      "finance",
+      "investing",
+      "economy"
+    ],
+    "publishedAt": "2021-04-08",
+    "reviewsCount": 188
+  },
+  {
+    "id": "b39",
+    "title": "Teams of Tomorrow",
+    "authors": [
+      "Yuri Antipov"
+    ],
+    "categories": [
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/134e4a/ffffff?text=Teams",
+    "description": "How to build distributed teams and sustain a culture of collaboration.",
+    "rating": {
+      "average": 4,
+      "votes": 420
+    },
+    "tags": [
+      "remote work",
+      "team",
+      "culture"
+    ],
+    "publishedAt": "2022-10-12",
+    "reviewsCount": 140
+  },
+  {
+    "id": "b40",
+    "title": "Risk and Growth",
+    "authors": [
+      "Galina Cherepanova"
+    ],
+    "categories": [
+      "business"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Risk",
+    "description": "Research on risk management strategies for startups and fast-scaling companies.",
+    "rating": {
+      "average": 4.2,
+      "votes": 470
+    },
+    "tags": [
+      "startup",
+      "strategy",
+      "management"
+    ],
+    "publishedAt": "2019-08-16",
+    "reviewsCount": 160
+  },
+  {
+    "id": "b41",
+    "title": "Physics in Pictures",
+    "authors": [
+      "Alexander Melnikov"
+    ],
+    "categories": [
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Physics",
+    "description": "Complex physics phenomena explained through visual stories and comics.",
+    "rating": {
+      "average": 4.6,
+      "votes": 710
+    },
+    "tags": [
+      "physics",
+      "visualization",
+      "education"
+    ],
+    "publishedAt": "2021-03-03",
+    "reviewsCount": 230
+  },
+  {
+    "id": "b42",
+    "title": "Everyday Biology",
+    "authors": [
+      "Elizar Stepanov"
+    ],
+    "categories": [
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Biology",
+    "description": "How biology shapes our daily decisions, from nutrition to social ties.",
+    "rating": {
+      "average": 4.1,
+      "votes": 360
+    },
+    "tags": [
+      "biology",
+      "health",
+      "behavior"
+    ],
+    "publishedAt": "2020-04-27",
+    "reviewsCount": 115
+  },
+  {
+    "id": "b43",
+    "title": "Universe in Your Palm",
+    "authors": [
+      "Pyotr Saveliev"
+    ],
+    "categories": [
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Universe",
+    "description": "A popular science guide to astrophysics focusing on the latest discoveries.",
+    "rating": {
+      "average": 4.5,
+      "votes": 590
+    },
+    "tags": [
+      "astronomy",
+      "space",
+      "science"
+    ],
+    "publishedAt": "2022-11-01",
+    "reviewsCount": 200
+  },
+  {
+    "id": "b44",
+    "title": "Math Without Fear",
+    "authors": [
+      "Daria Kruglova"
+    ],
+    "categories": [
+      "non-fiction"
+    ],
+    "coverUrl": "https://placehold.co/480x270/334155/ffffff?text=Math",
+    "description": "A practical guide for anyone intimidated by math, with real-life exercises and problems.",
+    "rating": {
+      "average": 4.2,
+      "votes": 420
+    },
+    "tags": [
+      "math",
+      "education",
+      "practice"
+    ],
+    "publishedAt": "2023-08-20",
+    "reviewsCount": 145
+  },
+  {
+    "id": "b45",
+    "title": "Brain and Music",
+    "authors": [
+      "Leonid Fadeev"
+    ],
+    "categories": [
+      "non-fiction",
+      "self-dev"
+    ],
+    "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Music",
+    "description": "Exploring how music affects the brain, with exercises for boosting creativity through sound.",
+    "rating": {
+      "average": 4.4,
+      "votes": 530
+    },
+    "tags": [
+      "music",
+      "neuroscience",
+      "creativity"
+    ],
+    "publishedAt": "2021-06-29",
+    "reviewsCount": 188
+  }
+]

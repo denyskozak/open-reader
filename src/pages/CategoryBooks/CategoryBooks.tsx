@@ -19,7 +19,7 @@ import { FiltersBar } from "@/widgets/FiltersBar/FiltersBar";
 export default function CategoryBooks(): JSX.Element {
   const navigate = useNavigate();
   const { id } = useParams<{ id: ID }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [category, setCategory] = useState<Category | null>(null);
   const [books, setBooks] = useState<Book[]>([]);
   const [cursor, setCursor] = useState<string | undefined>();
@@ -30,7 +30,11 @@ export default function CategoryBooks(): JSX.Element {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const debouncedSearch = useDebouncedValue(search, 250);
 
-  const availableTags = useMemo(() => (id ? getCategoryTags(id) : []), [id]);
+  const language = i18n.language;
+  const availableTags = useMemo(
+    () => (id ? getCategoryTags(id, language) : []),
+    [id, language],
+  );
   const cursorRef = useRef<string | undefined>();
 
   const loadCategory = useCallback(async () => {
