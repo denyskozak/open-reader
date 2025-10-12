@@ -10,6 +10,7 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 import { AppRouter } from "./router";
 import { ToastProvider } from "@/shared/ui/ToastProvider";
 import { DemoBanner } from "@/shared/ui/DemoBanner";
+import { FooterBar } from "@/widgets/FooterBar/FooterBar";
 import { HeaderBar } from "@/widgets/HeaderBar/HeaderBar";
 
 function NavigationControls(): null {
@@ -48,12 +49,23 @@ function AppContent(): JSX.Element {
   const { tgWebAppFullscreen } = useLaunchParams();
 
   return (
-    <AppRoot style={{ marginTop: tgWebAppFullscreen ? '10vh' : 0 }}>
+    <AppRoot style={{ marginTop: tgWebAppFullscreen ? "10vh" : 0 }}>
       <ToastProvider>
-        <HeaderBar />
-        <DemoBanner visible={!isTelegram} />
-        <div style={{ paddingBottom: 24 }}>
-          <AppRouter />
+        <div
+          style={{
+            minHeight: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <HeaderBar />
+          <main style={{ flex: 1, width: "100%" }}>
+            <DemoBanner visible={!isTelegram} />
+            <div style={{ paddingBottom: 24 }}>
+              <AppRouter />
+            </div>
+          </main>
+          <FooterBar />
         </div>
         <NavigationControls />
       </ToastProvider>

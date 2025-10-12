@@ -5,7 +5,7 @@ import enTranslation from "./locales/en/translation.json";
 import ruTranslation from "./locales/ru/translation.json";
 
 const STORAGE_KEY = "open-reader-language";
-const FALLBACK_LANGUAGE = "ru" as const;
+const FALLBACK_LANGUAGE = "en" as const;
 const SUPPORTED_LANGUAGES = ["en", "ru"] as const;
 
 type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];

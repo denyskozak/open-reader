@@ -19,6 +19,9 @@
       "select": "Выберите кошелёк"
     }
   },
+  "footer": {
+    "languageLabel": "Язык интерфейса"
+  },
   "errors": {
     "genericTitle": "Что-то пошло не так",
     "loadCategories": "Не удалось загрузить категории",

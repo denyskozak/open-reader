@@ -19,6 +19,9 @@
       "select": "Choose a wallet"
     }
   },
+  "footer": {
+    "languageLabel": "Language"
+  },
   "errors": {
     "genericTitle": "Something went wrong",
     "loadCategories": "Failed to load categories",

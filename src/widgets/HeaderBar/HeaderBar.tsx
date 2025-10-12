@@ -6,7 +6,6 @@ import { TonConnectButton } from "@tonconnect/ui-react";
 import { useTranslation } from "react-i18next";
 
 import { useTheme } from "@/app/providers/ThemeProvider";
-import { LanguageToggle } from "@/shared/ui/LanguageToggle";
 import { useToast } from "@/shared/ui/ToastProvider";
 
 const WALLETS = ["Tonkeeper", "Wallet", "MyTonWallet"];
@@ -47,10 +46,9 @@ export function HeaderBar(): JSX.Element {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}>
+          <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}> 
             {t("app.name")}
           </Title>
-          <LanguageToggle />
         </div>
         <div style={{ position: "relative" }}>
           <TonConnectButton style={{ opacity: 0, pointerEvents: "none" }} />
