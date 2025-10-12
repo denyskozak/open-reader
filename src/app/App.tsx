@@ -40,7 +40,6 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
       style={{
         position: "fixed",
         inset: 0,
-        backgroundColor: "#fff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -50,15 +49,27 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
         pointerEvents: visible ? "auto" : "none",
       }}
     >
-      <img
-        src="/logo.webp"
-        alt="Open Reader logo"
+      <div
         style={{
-          width: 160,
-          maxWidth: "60%",
-          height: "auto",
+          width: 30,
+          height: 30,
+          borderRadius: "50%",
+          backgroundColor: "#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-      />
+      >
+        <img
+          src="/logo.webp"
+          alt="Open Reader logo"
+          style={{
+            width: 24,
+            height: 24,
+            objectFit: "contain",
+          }}
+        />
+      </div>
     </div>
   );
 }
