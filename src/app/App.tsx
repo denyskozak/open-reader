@@ -13,8 +13,6 @@ import { DemoBanner } from "@/shared/ui/DemoBanner";
 import { FooterBar } from "@/widgets/FooterBar/FooterBar";
 import { HeaderBar } from "@/widgets/HeaderBar/HeaderBar";
 
-const SPLASH_STORAGE_KEY = "open-reader:splash-screen-seen";
-
 function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
   const [shouldRender, setShouldRender] = useState(visible);
 
