@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fantasy",
+    "title": "Fantasy",
+    "slug": "fantasy",
+    "emoji": "🧙",
+    "booksCount": 9
+  },
+  {
+    "id": "sci-fi",
+    "title": "Science Fiction",
+    "slug": "sci-fi",
+    "emoji": "🚀",
+    "booksCount": 8
+  },
+  {
+    "id": "mystery",
+    "title": "Mystery",
+    "slug": "mystery",
+    "emoji": "🕵️",
+    "booksCount": 7
+  },
+  {
+    "id": "romance",
+    "title": "Romance",
+    "slug": "romance",
+    "emoji": "💞",
+    "booksCount": 7
+  },
+  {
+    "id": "history",
+    "title": "History",
+    "slug": "history",
+    "emoji": "🏛️",
+    "booksCount": 7
+  },
+  {
+    "id": "self-dev",
+    "title": "Self-Development",
+    "slug": "self-development",
+    "emoji": "🌱",
+    "booksCount": 6
+  },
+  {
+    "id": "business",
+    "title": "Business",
+    "slug": "business",
+    "emoji": "💼",
+    "booksCount": 7
+  },
+  {
+    "id": "non-fiction",
+    "title": "Popular Science",
+    "slug": "non-fiction",
+    "emoji": "🔬",
+    "booksCount": 9
+  }
+]
