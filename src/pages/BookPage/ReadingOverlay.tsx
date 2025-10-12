@@ -84,7 +84,6 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
     setFontSize((current) => Math.min(26, current + 2));
   };
 
-    console.log("book: ", book);
   return (
     <div
       role="dialog"
@@ -99,13 +98,16 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
         display: "flex",
         flexDirection: "column",
         height: "100dvh",
+        overflowY: "auto",
+
       }}
     >
       <header
         style={{
-          padding: "16px 20px 12px",
+          padding: "20px 20px 12px",
           display: "flex",
           flexWrap: "wrap",
+            marginTop: '70px',
           gap: 12,
           justifyContent: "space-between",
           alignItems: "center",
@@ -160,7 +162,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
             disabled={fontSize <= 14}
             aria-label={t("book.reader.fontDecrease")}
           >
-            <span>A-</span>
+            <span style={{ color: themePalette[theme].color}}>A-</span>
           </Button>
           <Button
             size="s"
@@ -169,7 +171,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
             disabled={fontSize >= 26}
             aria-label={t("book.reader.fontIncrease")}
           >
-            A+
+              <span style={{ color: themePalette[theme].color}}>A+</span>
           </Button>
         </div>
 
@@ -178,13 +180,17 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
       <div
         style={{
           flex: 1,
-          overflowY: "auto",
           padding: "20px 20px 32px",
           fontSize,
           lineHeight: 1.7,
           scrollbarWidth: "thin",
         }}
       >
+        {paragraphs.map((paragraph, index) => (
+          <p key={index} style={{ margin: 0, marginBottom: 20 }}>
+            {paragraph}
+          </p>
+        ))}
         {paragraphs.map((paragraph, index) => (
           <p key={index} style={{ margin: 0, marginBottom: 20 }}>
             {paragraph}
