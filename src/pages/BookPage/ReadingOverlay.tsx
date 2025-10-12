@@ -32,7 +32,8 @@ type ReadingOverlayProps = {
 export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Element {
   const { t } = useTranslation();
   const [fontSize, setFontSize] = useState(18);
-  const [theme, setTheme] = useState<ReaderTheme>("light");
+
+  const [theme, setTheme] = useState<ReaderTheme>("dark");
   const palette = themePalette[theme];
 
   const paragraphs = useMemo(() => {
@@ -75,6 +76,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
     setFontSize((current) => Math.min(26, current + 2));
   };
 
+    console.log("book: ", book);
   return (
     <div
       role="dialog"
@@ -106,7 +108,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
           <Title level="2" weight="2" style={{ margin: 0, color: "inherit" }}>
             {book.title}
           </Title>
-          <span style={{ fontSize: 13, opacity: 0.7 }}>{book.authors.join(", ")}</span>
+              <span style={{ fontSize: 16, opacity: 0.7 }}>{book.authors.join(", ")}</span>
         </div>
         <Button
           size="s"
@@ -128,6 +130,19 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
           borderBottom: `1px solid ${palette.border}`,
         }}
       >
+         <div style={{ width: "70%", margin: "0 auto" }}>
+             <SegmentedControl>
+                 {(["light", "sepia", "dark"] as ReaderTheme[]).map((value) => (
+                     <SegmentedControl.Item
+                         key={value}
+                         selected={value === theme}
+                         onClick={() => setTheme(value)}
+                     >
+                         {t(`book.reader.theme.${value}` as const)}
+                     </SegmentedControl.Item>
+                 ))}
+             </SegmentedControl>
+         </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <span style={{ fontSize: 13, opacity: 0.7 }}>{t("book.reader.fontLabel")}</span>
           <Button
@@ -137,7 +152,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
             disabled={fontSize <= 14}
             aria-label={t("book.reader.fontDecrease")}
           >
-            A-
+            <span>A-</span>
           </Button>
           <Button
             size="s"
@@ -149,17 +164,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
             A+
           </Button>
         </div>
-        <SegmentedControl>
-          {(["light", "sepia", "dark"] as ReaderTheme[]).map((value) => (
-            <SegmentedControl.Item
-              key={value}
-              selected={value === theme}
-              onClick={() => setTheme(value)}
-            >
-              {t(`book.reader.theme.${value}` as const)}
-            </SegmentedControl.Item>
-          ))}
-        </SegmentedControl>
+
         <span style={{ fontSize: 12, opacity: 0.6 }}>{t("book.reader.demoNotice")}</span>
       </div>
       <div

@@ -79,37 +79,14 @@ function NavigationControls(): null {
 function AppContent(): JSX.Element {
   const { isTelegram } = useTMA();
   const { tgWebAppFullscreen } = useLaunchParams();
-  const [isSplashVisible, setIsSplashVisible] = useState(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
 
-    try {
-      return !window.localStorage.getItem(SPLASH_STORAGE_KEY);
-    } catch {
-      return false;
-    }
-  });
-
-  useEffect(() => {
-    if (!isSplashVisible) {
-      return;
-    }
-
-    const timeoutId = window.setTimeout(() => {
-      setIsSplashVisible(false);
-
-      try {
-        window.localStorage.setItem(SPLASH_STORAGE_KEY, "true");
-      } catch {
-        // Ignore storage errors.
-      }
-    }, 2000);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-    };
-  }, [isSplashVisible]);
+    useEffect(() => {
+        const timeoutId = window.setTimeout(() => {
+            setIsSplashVisible(false);
+        }, 2000);
+        return () => { clearTimeout(timeoutId); };
+    }, []);
 
   return (
     <AppRoot style={{ marginTop: tgWebAppFullscreen ? "10vh" : 0 }}>
