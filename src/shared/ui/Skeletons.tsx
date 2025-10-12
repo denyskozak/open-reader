@@ -32,7 +32,12 @@ export function BookCardSkeleton(): JSX.Element {
       <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 8 }}>
         <Skeleton style={{ width: "70%", height: 20 }} />
         <Skeleton style={{ width: "50%", height: 16 }} />
-        <Skeleton style={{ width: "60%", height: 16 }} />
+        <Skeleton style={{ width: "40%", height: 16 }} />
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {Array.from({ length: 3 }).map((_, index) => (
+            <Skeleton key={index} style={{ width: 60, height: 24, borderRadius: 12 }} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Button, Card, Chip, Modal, Skeleton, Title } from "@telegram-apps/telegram-ui";
+import { Button, Card, Chip, Modal, Title } from "@telegram-apps/telegram-ui";
 import { useTranslation } from "react-i18next";
 
 import { catalogApi } from "@/entities/book/api";
@@ -13,6 +13,7 @@ import { ErrorBanner } from "@/shared/ui/ErrorBanner";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { useToast } from "@/shared/ui/ToastProvider";
 import { ReadingOverlay } from "./ReadingOverlay";
+import { BookPageSkeleton } from "./BookPageSkeleton";
 
 export default function BookPage(): JSX.Element {
   const { id } = useParams<{ id: ID }>();
@@ -187,27 +188,21 @@ export default function BookPage(): JSX.Element {
     return <ErrorBanner message={error} onRetry={loadBook} />;
   }
 
+  if (isLoading || !book) {
+    return <BookPageSkeleton />;
+  }
+
   const actionTitle =
     activeAction === "subscribe" ? t("book.modalTitle.subscribe") : t("book.modalTitle.buy");
 
   return (
     <>
       <main style={{ margin: "0 auto", maxWidth: 720, paddingBottom: 96 }}>
-        {isLoading || !book ? (
-          <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 16 }}>
-            <Skeleton style={{ height: 200, borderRadius: 20 }} />
-            <Skeleton style={{ height: 24, width: "70%" }} />
-            <Skeleton style={{ height: 16, width: "40%" }} />
-            <Skeleton style={{ height: 16, width: "30%" }} />
-            <Skeleton style={{ height: 16, width: "80%" }} />
-          </div>
-        ) : (
-          <>
-            <div style={{ position: "relative" }}>
-              <div style={{ padding: 16 }}>
-                <Card style={{ borderRadius: 24, overflow: "hidden" }}>
-                  <div style={{ position: "relative", aspectRatio: "16 / 9" }}>
-                    <img
+        <div style={{ position: "relative" }}>
+          <div style={{ padding: 16 }}>
+            <Card style={{ borderRadius: 24, overflow: "hidden" }}>
+              <div style={{ position: "relative", aspectRatio: "16 / 9" }}>
+                <img
                       src={book.coverUrl}
                       alt={t("book.coverAlt", { title: book.title })}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -339,9 +334,7 @@ export default function BookPage(): JSX.Element {
                   <SimilarCarousel books={similar} onSelect={(bookId) => navigate(`/book/${bookId}`)} />
                 )}
               </section>
-            </div>
-          </>
-        )}
+        </div>
       </main>
       <Modal open={isPurchaseModalOpen} onOpenChange={handleModalOpenChange}>
         <Modal.Header>{actionTitle}</Modal.Header>
