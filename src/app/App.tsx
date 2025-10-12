@@ -1,5 +1,5 @@
 import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type TransitionEvent } from "react";
 import { useLaunchParams } from '@telegram-apps/sdk-react';
 
 import { AppRoot } from "@telegram-apps/telegram-ui";
@@ -16,12 +16,27 @@ import { HeaderBar } from "@/widgets/HeaderBar/HeaderBar";
 const SPLASH_STORAGE_KEY = "open-reader:splash-screen-seen";
 
 function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
-  if (!visible) {
+  const [shouldRender, setShouldRender] = useState(visible);
+
+  useEffect(() => {
+    if (visible) {
+      setShouldRender(true);
+    }
+  }, [visible]);
+
+  const handleTransitionEnd = (event: TransitionEvent<HTMLDivElement>) => {
+    if (event.propertyName === "opacity" && !visible) {
+      setShouldRender(false);
+    }
+  };
+
+  if (!shouldRender) {
     return null;
   }
 
   return (
     <div
+      onTransitionEnd={handleTransitionEnd}
       style={{
         position: "fixed",
         inset: 0,
@@ -30,6 +45,9 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
         alignItems: "center",
         justifyContent: "center",
         zIndex: 9999,
+        opacity: visible ? 1 : 0,
+        transition: "opacity 400ms ease",
+        pointerEvents: visible ? "auto" : "none",
       }}
     >
       <img
