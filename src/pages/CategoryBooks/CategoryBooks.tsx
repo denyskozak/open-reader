@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { catalogApi, getCategoryTags } from "@/entities/book/api";
 import type { Book, ID } from "@/entities/book/types";
@@ -18,6 +19,7 @@ import { FiltersBar } from "@/widgets/FiltersBar/FiltersBar";
 export default function CategoryBooks(): JSX.Element {
   const navigate = useNavigate();
   const { id } = useParams<{ id: ID }>();
+  const { t } = useTranslation();
   const [category, setCategory] = useState<Category | null>(null);
   const [books, setBooks] = useState<Book[]>([]);
   const [cursor, setCursor] = useState<string | undefined>();
@@ -41,9 +43,10 @@ export default function CategoryBooks(): JSX.Element {
       const current = allCategories.find((item) => item.id === id) ?? null;
       setCategory(current);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Не удалось получить категорию");
+      console.error(err);
+      setError(t("errors.fetchCategory"));
     }
-  }, [id]);
+  }, [id, t]);
 
   const loadBooks = useCallback(
     async (reset = false) => {
@@ -64,12 +67,13 @@ export default function CategoryBooks(): JSX.Element {
         setCursor(response.nextCursor);
         setBooks((prev) => (reset ? response.items : [...prev, ...response.items]));
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Не удалось загрузить книги");
+        console.error(err);
+        setError(t("errors.loadBooks"));
       } finally {
         setIsLoading(false);
       }
     },
-    [debouncedSearch, id, selectedTags, sort],
+    [debouncedSearch, id, selectedTags, sort, t],
   );
 
   useEffect(() => {
@@ -95,13 +99,13 @@ export default function CategoryBooks(): JSX.Element {
   const sentinelRef = useIntersectionObserver(handleIntersect);
 
   if (!id) {
-    return <ErrorBanner message="Категория не найдена" />;
+    return <ErrorBanner message={t("errors.categoryNotFound")} />;
   }
 
   return (
     <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
       <Title level="1" weight="2" style={{ marginBottom: 16 }}>
-        {category?.title ?? "Категория"}
+        {category?.title ?? t("book.fallbackCategoryTitle")}
       </Title>
       <FiltersBar
         search={search}
@@ -129,10 +133,7 @@ export default function CategoryBooks(): JSX.Element {
           </>
         )}
         {!isLoading && books.length === 0 && !error && (
-          <EmptyState
-            title="Ничего не найдено"
-            description="Измените фильтры или попробуйте другой запрос"
-          />
+          <EmptyState title={t("common.notFound")} description={t("categoryBooks.emptyDescription")} />
         )}
         <div ref={sentinelRef} style={{ height: 1 }} />
         {isLoading && books.length > 0 && <BookCardSkeleton />}

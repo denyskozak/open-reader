@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Button, Card, Chip, Modal, Skeleton, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { catalogApi } from "@/entities/book/api";
 import type { Book, ID } from "@/entities/book/types";
@@ -16,6 +17,7 @@ export default function BookPage(): JSX.Element {
   const { id } = useParams<{ id: ID }>();
   const navigate = useNavigate();
   const { showToast } = useToast();
+  const { t } = useTranslation();
   const reviewsRef = useRef<HTMLDivElement | null>(null);
   const loaderTimeoutRef = useRef<number | null>(null);
   const [book, setBook] = useState<Book | null>(null);
@@ -44,21 +46,22 @@ export default function BookPage(): JSX.Element {
       });
       setSimilar(similarBooksResponse.items.filter((entry) => entry.id !== item.id).slice(0, 6));
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Не удалось загрузить книгу");
+      console.error(err);
+      setError(t("errors.loadBook"));
     } finally {
       setIsLoading(false);
     }
-  }, [id]);
+  }, [id, t]);
 
   const handleShare = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(window.location.href);
-      showToast("Ссылка скопирована");
+      showToast(t("book.toast.linkCopied"));
     } catch (err) {
-      showToast("Не удалось скопировать ссылку");
+      showToast(t("book.toast.linkFailed"));
       console.error(err);
     }
-  }, [showToast]);
+  }, [showToast, t]);
 
   const handleScrollToReviews = useCallback(() => {
     reviewsRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -106,8 +109,8 @@ export default function BookPage(): JSX.Element {
     setIsPurchased(true);
     setActiveAction(null);
     setIsActionLoading(false);
-    showToast("Доступ к книге открыт (демо)");
-  }, [showToast]);
+    showToast(t("book.toast.accessGranted"));
+  }, [showToast, t]);
 
   const handleModalOpenChange = useCallback(
     (open: boolean) => {
@@ -144,14 +147,21 @@ export default function BookPage(): JSX.Element {
   }, [loadBook]);
 
   if (!id) {
-    return <ErrorBanner message="Книга не найдена" onRetry={() => navigate("/")} actionLabel="На главную" />;
+    return (
+      <ErrorBanner
+        message={t("errors.bookNotFound")}
+        onRetry={() => navigate("/")}
+        actionLabel={t("buttons.goHome")}
+      />
+    );
   }
 
   if (error) {
     return <ErrorBanner message={error} onRetry={loadBook} />;
   }
 
-  const actionTitle = activeAction === "subscribe" ? "Подписка" : "Покупка";
+  const actionTitle =
+    activeAction === "subscribe" ? t("book.modalTitle.subscribe") : t("book.modalTitle.buy");
 
   return (
     <>
@@ -172,11 +182,11 @@ export default function BookPage(): JSX.Element {
                   <div style={{ position: "relative", aspectRatio: "16 / 9" }}>
                     <img
                       src={book.coverUrl}
-                      alt={`Обложка книги ${book.title}`}
+                      alt={t("book.coverAlt", { title: book.title })}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                     <Button
-                      aria-label="Поделиться"
+                      aria-label={t("book.share")}
                       mode="plain"
                       onClick={handleShare}
                       style={{ position: "absolute", top: 12, right: 12 }}
@@ -223,16 +233,18 @@ export default function BookPage(): JSX.Element {
                       {book.priceStars} ⭐
                     </Chip>
                   </div>
-                  <div style={{ color: "var(--app-subtitle-color)" }}>{book.reviewsCount} отзывов</div>
+                  <div style={{ color: "var(--app-subtitle-color)" }}>
+                    {t("book.reviewsCount", { count: book.reviewsCount })}
+                  </div>
                 </div>
               </Card>
               {isPurchased ? (
                 <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                   <Button size="l" onClick={handleRead}>
-                    Читать
+                    {t("book.actions.read")}
                   </Button>
                   <Button size="l" mode="outline" onClick={handleDownload}>
-                    Скачать
+                    {t("book.actions.download")}
                   </Button>
                 </div>
               ) : (
@@ -243,7 +255,7 @@ export default function BookPage(): JSX.Element {
                     disabled={isActionLoading}
                     onClick={() => handleMockAction("buy")}
                   >
-                    Купить
+                    {t("book.actions.buy")}
                   </Button>
                   <Button
                     size="l"
@@ -252,13 +264,13 @@ export default function BookPage(): JSX.Element {
                     disabled={isActionLoading}
                     onClick={() => handleMockAction("subscribe")}
                   >
-                    Подписаться
+                    {t("book.actions.subscribe")}
                   </Button>
                 </div>
               )}
               <Card style={{ padding: 16, borderRadius: 20 }}>
                 <Title level="3" weight="2" style={{ marginBottom: 12 }}>
-                  Описание
+                  {t("book.description.title")}
                 </Title>
                 <p style={{ lineHeight: 1.6 }}>
                   {showFullDescription || book.description.length <= 280
@@ -266,21 +278,33 @@ export default function BookPage(): JSX.Element {
                     : `${book.description.slice(0, 280)}...`}
                 </p>
                 <Button mode="plain" onClick={() => setShowFullDescription((prev) => !prev)}>
-                  {showFullDescription ? "Свернуть" : "Показать больше"}
+                  {showFullDescription
+                    ? t("book.description.showLess")
+                    : t("book.description.showMore")}
                 </Button>
               </Card>
-              <section ref={reviewsRef} aria-label="Отзывы" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <section
+                ref={reviewsRef}
+                aria-label={t("book.reviewsSection")}
+                style={{ display: "flex", flexDirection: "column", gap: 16 }}
+              >
                 <Title level="2" weight="2">
-                  Отзывы
+                  {t("book.reviewsSection")}
                 </Title>
                 <ReviewsList api={catalogApi} bookId={book.id} />
               </section>
-              <section aria-label="Похожие книги" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <section
+                aria-label={t("book.similarSection")}
+                style={{ display: "flex", flexDirection: "column", gap: 12 }}
+              >
                 <Title level="2" weight="2">
-                  Похожие книги
+                  {t("book.similarSection")}
                 </Title>
                 {similar.length === 0 ? (
-                  <EmptyState title="Пока нечего посоветовать" description="Мы работаем над рекомендациями" />
+                  <EmptyState
+                    title={t("book.similarEmptyTitle")}
+                    description={t("book.similarEmptyDescription")}
+                  />
                 ) : (
                   <SimilarCarousel books={similar} onSelect={(bookId) => navigate(`/book/${bookId}`)} />
                 )}
@@ -294,8 +318,8 @@ export default function BookPage(): JSX.Element {
         <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
           <p style={{ margin: 0, lineHeight: 1.5 }}>
             {activeAction === "subscribe"
-              ? "Подписка откроет доступ к новым релизам и этой книге."
-              : "Вы получите полный доступ к книге после оформления покупки."}
+              ? t("book.subscribeDescription")
+              : t("book.buyDescription")}
           </p>
           {book && (
             <Card style={{ padding: 12, borderRadius: 16 }}>
@@ -306,7 +330,7 @@ export default function BookPage(): JSX.Element {
             </Card>
           )}
           <Button size="l" mode="filled" onClick={handleConfirmPurchase}>
-            Оформить
+            {t("book.actions.confirm")}
           </Button>
         </div>
       </Modal>

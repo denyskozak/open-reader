@@ -1,4 +1,5 @@
 import { Button, Card, Text, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 interface ErrorBannerProps {
   message: string;
@@ -6,18 +7,21 @@ interface ErrorBannerProps {
   actionLabel?: string;
 }
 
-export function ErrorBanner({ message, onRetry, actionLabel = "Повторить" }: ErrorBannerProps): JSX.Element {
+export function ErrorBanner({ message, onRetry, actionLabel }: ErrorBannerProps): JSX.Element {
+  const { t } = useTranslation();
+  const retryLabel = actionLabel ?? t("buttons.retry");
+
   return (
     <Card style={{ padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
       <div>
         <Title level="3" weight="2">
-          Что-то пошло не так
+          {t("errors.genericTitle")}
         </Title>
         <Text style={{ color: "var(--app-subtitle-color)" }}>{message}</Text>
       </div>
       {onRetry ? (
         <Button mode="filled" size="s" onClick={onRetry}>
-          {actionLabel}
+          {retryLabel}
         </Button>
       ) : null}
     </Card>

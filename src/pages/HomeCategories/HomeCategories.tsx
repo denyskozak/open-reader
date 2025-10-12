@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Input, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { CategoryTile } from "@/entities/category/components/CategoryTile";
 import type { Category } from "@/entities/category/types";
@@ -19,12 +20,22 @@ import { CategoryTileSkeleton } from "@/shared/ui/Skeletons";
 
 export default function HomeCategories(): JSX.Element {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [refreshToken, setRefreshToken] = useState(0);
   const debouncedSearch = useDebouncedValue(search, 250);
+
+  const translatedSpecialCategories = useMemo<SpecialCategory[]>(
+    () =>
+      SPECIAL_CATEGORIES.map((category) => ({
+        ...category,
+        title: t(category.titleKey),
+      })),
+    [t],
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -40,7 +51,8 @@ export default function HomeCategories(): JSX.Element {
         }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Не удалось загрузить категории");
+          console.error(err);
+          setError(t("errors.loadCategories"));
         }
       } finally {
         if (!cancelled) {
@@ -54,17 +66,17 @@ export default function HomeCategories(): JSX.Element {
     return () => {
       cancelled = true;
     };
-  }, [debouncedSearch, refreshToken]);
+  }, [debouncedSearch, refreshToken, t]);
 
   const normalizedSearch = debouncedSearch.trim().toLocaleLowerCase();
 
   const specialCategories: SpecialCategory[] = normalizedSearch
-    ? SPECIAL_CATEGORIES.filter((category) =>
+    ? translatedSpecialCategories.filter((category) =>
         [category.title, category.slug].some((value) =>
           value.toLocaleLowerCase().includes(normalizedSearch),
         ),
       )
-    : SPECIAL_CATEGORIES;
+    : translatedSpecialCategories;
 
   const displayedCategories: Category[] = [...specialCategories, ...categories];
 
@@ -80,14 +92,14 @@ export default function HomeCategories(): JSX.Element {
   return (
     <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
       <Title level="1" weight="2" style={{ marginBottom: 16 }}>
-        Категории
+        {t("homeCategories.title")}
       </Title>
       <Input
         type="search"
         value={search}
         onChange={(event) => setSearch(event.target.value)}
-        placeholder="Поиск по категориям"
-        aria-label="Поиск по категориям"
+        placeholder={t("homeCategories.searchPlaceholder")}
+        aria-label={t("homeCategories.searchPlaceholder")}
         style={{ marginBottom: 16 }}
       />
       {error && <ErrorBanner message={error} onRetry={() => setRefreshToken((prev) => prev + 1)} />}
@@ -108,7 +120,12 @@ export default function HomeCategories(): JSX.Element {
           ))}
         </div>
       ) : (
-        !isLoading && <EmptyState title="Ничего не найдено" description="Попробуйте изменить запрос" />
+        !isLoading && (
+          <EmptyState
+            title={t("homeCategories.emptyTitle")}
+            description={t("homeCategories.emptyDescription")}
+          />
+        )
       )}
     </main>
   );

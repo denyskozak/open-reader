@@ -1,13 +1,15 @@
 import type { ChangeEvent } from "react";
+import { useMemo } from "react";
 
 import { Chip, Input, SegmentedControl } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import type { BookSort } from "@/shared/lib/bookSort";
 
-const SORT_OPTIONS: Array<{ label: string; value: BookSort }> = [
-  { label: "Популярные", value: "popular" },
-  { label: "Лучшие", value: "rating" },
-  { label: "Новинки", value: "new" },
+const SORT_OPTION_KEYS: Array<{ labelKey: string; value: BookSort }> = [
+  { labelKey: "filters.sort.popular", value: "popular" },
+  { labelKey: "filters.sort.rating", value: "rating" },
+  { labelKey: "filters.sort.new", value: "new" },
 ];
 
 interface FiltersBarProps {
@@ -29,6 +31,12 @@ export function FiltersBar({
   selectedTags,
   onToggleTag,
 }: FiltersBarProps): JSX.Element {
+  const { t } = useTranslation();
+  const sortOptions = useMemo(
+    () => SORT_OPTION_KEYS.map((option) => ({ ...option, label: t(option.labelKey) })),
+    [t],
+  );
+
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     onSearchChange(event.target.value);
   };
@@ -39,11 +47,11 @@ export function FiltersBar({
         type="search"
         value={search}
         onChange={handleSearch}
-        placeholder="Поиск по книгам"
-        aria-label="Поиск по книгам"
+        placeholder={t("filters.searchPlaceholder")}
+        aria-label={t("filters.searchPlaceholder")}
       />
       <SegmentedControl>
-        {SORT_OPTIONS.map((option) => (
+        {sortOptions.map((option) => (
           <SegmentedControl.Item
             key={option.value}
             selected={option.value === sort}
