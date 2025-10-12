@@ -1,5 +1,5 @@
 import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLaunchParams } from '@telegram-apps/sdk-react';
 
 import { AppRoot } from "@telegram-apps/telegram-ui";
@@ -12,6 +12,38 @@ import { ToastProvider } from "@/shared/ui/ToastProvider";
 import { DemoBanner } from "@/shared/ui/DemoBanner";
 import { FooterBar } from "@/widgets/FooterBar/FooterBar";
 import { HeaderBar } from "@/widgets/HeaderBar/HeaderBar";
+
+const SPLASH_STORAGE_KEY = "open-reader:splash-screen-seen";
+
+function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
+  if (!visible) {
+    return null;
+  }
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        backgroundColor: "#fff",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+      }}
+    >
+      <img
+        src="/logo.webp"
+        alt="Open Reader logo"
+        style={{
+          width: 160,
+          maxWidth: "60%",
+          height: "auto",
+        }}
+      />
+    </div>
+  );
+}
 
 function NavigationControls(): null {
   const location = useLocation();
@@ -47,6 +79,37 @@ function NavigationControls(): null {
 function AppContent(): JSX.Element {
   const { isTelegram } = useTMA();
   const { tgWebAppFullscreen } = useLaunchParams();
+  const [isSplashVisible, setIsSplashVisible] = useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    try {
+      return !window.localStorage.getItem(SPLASH_STORAGE_KEY);
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    if (!isSplashVisible) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setIsSplashVisible(false);
+
+      try {
+        window.localStorage.setItem(SPLASH_STORAGE_KEY, "true");
+      } catch {
+        // Ignore storage errors.
+      }
+    }, 2000);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [isSplashVisible]);
 
   return (
     <AppRoot style={{ marginTop: tgWebAppFullscreen ? "10vh" : 0 }}>
@@ -69,6 +132,7 @@ function AppContent(): JSX.Element {
         </div>
         <NavigationControls />
       </ToastProvider>
+      <SplashScreen visible={isSplashVisible} />
     </AppRoot>
   );
 }
