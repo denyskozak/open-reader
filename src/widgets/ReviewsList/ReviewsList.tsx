@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Avatar, Button, Card, Text, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import type { CatalogApi, ID, Review } from "@/entities/book/types";
 import { formatRating } from "@/shared/lib/rating";
@@ -18,6 +19,7 @@ export function ReviewsList({ api, bookId }: ReviewsListProps): JSX.Element {
   const [cursor, setCursor] = useState<string | undefined>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { t, i18n } = useTranslation();
 
   const hasMore = useMemo(() => Boolean(cursor), [cursor]);
 
@@ -30,12 +32,13 @@ export function ReviewsList({ api, bookId }: ReviewsListProps): JSX.Element {
         setCursor(response.nextCursor);
         setItems((prev) => (reset ? response.items : [...prev, ...response.items]));
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Не удалось загрузить отзывы");
+        console.error(err);
+        setError(t("errors.loadReviews"));
       } finally {
         setIsLoading(false);
       }
     },
-    [api, bookId, cursor],
+    [api, bookId, cursor, t],
   );
 
   useEffect(() => {
@@ -49,8 +52,12 @@ export function ReviewsList({ api, bookId }: ReviewsListProps): JSX.Element {
   }
 
   if (!isLoading && items.length === 0) {
-    return <EmptyState title="Пока нет отзывов" description="Будьте первым, кто поделится впечатлениями" />;
+    return (
+      <EmptyState title={t("reviews.emptyTitle")} description={t("reviews.emptyDescription")} />
+    );
   }
+
+  const locale = i18n.language.startsWith("ru") ? "ru-RU" : "en-US";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -65,13 +72,13 @@ export function ReviewsList({ api, bookId }: ReviewsListProps): JSX.Element {
                 {review.authorName}
               </Title>
               <Text style={{ color: "var(--app-subtitle-color)" }}>
-                {new Intl.DateTimeFormat("ru-RU", {
+                {new Intl.DateTimeFormat(locale, {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
                 }).format(new Date(review.createdAt))}
                 {" • "}
-                Оценка {formatRating(review.rating)}
+                {t("reviews.rating", { value: formatRating(review.rating) })}
               </Text>
               <Text style={{ lineHeight: 1.4 }}>{review.text}</Text>
             </div>
@@ -85,7 +92,7 @@ export function ReviewsList({ api, bookId }: ReviewsListProps): JSX.Element {
       )}
       {hasMore && !isLoading && (
         <Button mode="outline" onClick={() => load(false)}>
-          Показать ещё
+          {t("reviews.loadMore")}
         </Button>
       )}
     </div>

@@ -1,0 +1,127 @@
+{
+  "app": {
+    "name": "Open Reader",
+    "demo": {
+      "title": "Demo mode",
+      "description": "You are outside Telegram. Some features are limited."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "ru": "Russian"
+  },
+  "header": {
+    "languageToggle": "Switch language (current: {{language}})",
+    "wallet": {
+      "connect": "Connect wallet",
+      "connected": "Wallet: {{wallet}}",
+      "connectedToast": "Wallet {{wallet}} connected (demo)",
+      "select": "Choose a wallet"
+    }
+  },
+  "footer": {
+    "languageLabel": "Language"
+  },
+  "errors": {
+    "genericTitle": "Something went wrong",
+    "loadCategories": "Failed to load categories",
+    "loadBooks": "Failed to load books",
+    "loadBook": "Failed to load the book",
+    "loadReviews": "Failed to load reviews",
+    "fetchCategory": "Failed to fetch category",
+    "categoryNotFound": "Category not found",
+    "bookNotFound": "Book not found"
+  },
+  "homeCategories": {
+    "title": "Categories",
+    "searchPlaceholder": "Search categories",
+    "emptyTitle": "Nothing found",
+    "emptyDescription": "Try changing the query"
+  },
+  "filters": {
+    "searchPlaceholder": "Search books",
+    "sort": {
+      "popular": "Popular",
+      "rating": "Top rated",
+      "new": "New"
+    }
+  },
+  "categoryBooks": {
+    "emptyDescription": "Adjust the filters or try a different query"
+  },
+  "common": {
+    "notFound": "Nothing found",
+    "tryLater": "Try refreshing the page later"
+  },
+  "buttons": {
+    "retry": "Retry",
+    "goHome": "Go home",
+    "read": "Read",
+    "download": "Download",
+    "buy": "Buy",
+    "subscribe": "Subscribe",
+    "collapse": "Show less",
+    "expand": "Show more",
+    "confirm": "Complete",
+    "showMore": "Show more"
+  },
+  "book": {
+    "cardAria": "Book {{title}}",
+    "coverAlt": "{{title}} book cover",
+    "fallbackCategoryTitle": "Category",
+    "share": "Share",
+    "description": {
+      "title": "Description",
+      "showLess": "Show less",
+      "showMore": "Show more"
+    },
+    "reviewsSection": "Reviews",
+    "similarSection": "Similar books",
+    "similarEmptyTitle": "Nothing to recommend yet",
+    "similarEmptyDescription": "We are working on recommendations",
+    "subscribeDescription": "A subscription opens access to new releases and this book.",
+    "buyDescription": "You will get full access to the book after completing the purchase.",
+    "modalTitle": {
+      "buy": "Purchase",
+      "subscribe": "Subscription"
+    },
+    "actions": {
+      "read": "Read",
+      "download": "Download",
+      "buy": "Buy",
+      "subscribe": "Subscribe",
+      "confirm": "Complete"
+    },
+    "toast": {
+      "linkCopied": "Link copied",
+      "linkFailed": "Could not copy the link",
+      "accessGranted": "Book access granted (demo)"
+    },
+    "reviewsCount": "{{count}} review",
+    "reviewsCount_plural": "{{count}} reviews",
+    "votes": "{{count}} rating",
+    "votes_plural": "{{count}} ratings"
+  },
+  "reviews": {
+    "emptyTitle": "No reviews yet",
+    "emptyDescription": "Be the first to share your impressions",
+    "rating": "Rating {{value}}",
+    "loadMore": "Show more"
+  },
+  "similar": {
+    "empty": "Nothing to recommend yet",
+    "aria": "Go to the book {{title}}"
+  },
+  "images": {
+    "bookCover": "{{title}} book cover"
+  },
+  "categories": {
+    "special": {
+      "mostRead": "Most read",
+      "topRated": "Top rated"
+    },
+    "aria": "Category {{title}}",
+    "booksCount": "{{count}} book",
+    "booksCount_plural": "{{count}} books"
+  }
+}

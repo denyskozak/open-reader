@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { catalogApi } from "@/entities/book/api";
 import type { Book } from "@/entities/book/types";
@@ -20,10 +21,16 @@ export default function TopBooks(): JSX.Element {
   const { type } = useParams<{ type: string }>();
   const categoryId = type && isSpecialCategoryId(type) ? (type as SpecialCategoryId) : null;
   const category = categoryId ? SPECIAL_CATEGORY_MAP[categoryId] : null;
+  const { t } = useTranslation();
   const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [refreshToken, setRefreshToken] = useState(0);
+
+  const categoryTitle = useMemo(
+    () => (category ? t(category.titleKey) : ""),
+    [category, t],
+  );
 
   useEffect(() => {
     if (!category) {
@@ -46,7 +53,8 @@ export default function TopBooks(): JSX.Element {
         }
       } catch (err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Не удалось загрузить книги");
+          console.error(err);
+          setError(t("errors.loadBooks"));
         }
       } finally {
         if (!cancelled) {
@@ -60,18 +68,18 @@ export default function TopBooks(): JSX.Element {
     return () => {
       cancelled = true;
     };
-  }, [category, refreshToken]);
+  }, [category, refreshToken, t]);
 
   const handleRetry = () => setRefreshToken((prev) => prev + 1);
 
   if (!category) {
-    return <ErrorBanner message="Категория не найдена" onRetry={() => navigate("/")} />;
+    return <ErrorBanner message={t("errors.categoryNotFound")} onRetry={() => navigate("/")} />;
   }
 
   return (
     <main style={{ padding: "16px 16px 32px", margin: "0 auto", maxWidth: 720 }}>
       <Title level="1" weight="2" style={{ marginBottom: 16 }}>
-        {category.title}
+        {categoryTitle}
       </Title>
       {error && <ErrorBanner message={error} onRetry={handleRetry} />}
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -86,7 +94,7 @@ export default function TopBooks(): JSX.Element {
           </>
         )}
         {!isLoading && books.length === 0 && !error && (
-          <EmptyState title="Ничего не найдено" description="Попробуйте обновить страницу позже" />
+          <EmptyState title={t("common.notFound")} description={t("common.tryLater")} />
         )}
         {isLoading && books.length > 0 && <BookCardSkeleton />}
       </div>

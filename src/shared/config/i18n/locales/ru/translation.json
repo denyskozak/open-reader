@@ -1,0 +1,133 @@
+{
+  "app": {
+    "name": "Open Reader",
+    "demo": {
+      "title": "Демо-режим",
+      "description": "Вы находитесь вне Telegram. Некоторые возможности ограничены."
+    }
+  },
+  "languages": {
+    "en": "Английский",
+    "ru": "Русский"
+  },
+  "header": {
+    "languageToggle": "Сменить язык (текущий: {{language}})",
+    "wallet": {
+      "connect": "Подключить кошелёк",
+      "connected": "Кошелёк: {{wallet}}",
+      "connectedToast": "Кошелёк {{wallet}} подключен (демо)",
+      "select": "Выберите кошелёк"
+    }
+  },
+  "footer": {
+    "languageLabel": "Язык интерфейса"
+  },
+  "errors": {
+    "genericTitle": "Что-то пошло не так",
+    "loadCategories": "Не удалось загрузить категории",
+    "loadBooks": "Не удалось загрузить книги",
+    "loadBook": "Не удалось загрузить книгу",
+    "loadReviews": "Не удалось загрузить отзывы",
+    "fetchCategory": "Не удалось получить категорию",
+    "categoryNotFound": "Категория не найдена",
+    "bookNotFound": "Книга не найдена"
+  },
+  "homeCategories": {
+    "title": "Категории",
+    "searchPlaceholder": "Поиск по категориям",
+    "emptyTitle": "Ничего не найдено",
+    "emptyDescription": "Попробуйте изменить запрос"
+  },
+  "filters": {
+    "searchPlaceholder": "Поиск по книгам",
+    "sort": {
+      "popular": "Популярные",
+      "rating": "Лучшие",
+      "new": "Новинки"
+    }
+  },
+  "categoryBooks": {
+    "emptyDescription": "Измените фильтры или попробуйте другой запрос"
+  },
+  "common": {
+    "notFound": "Ничего не найдено",
+    "tryLater": "Попробуйте обновить страницу позже"
+  },
+  "buttons": {
+    "retry": "Повторить",
+    "goHome": "На главную",
+    "read": "Читать",
+    "download": "Скачать",
+    "buy": "Купить",
+    "subscribe": "Подписаться",
+    "collapse": "Свернуть",
+    "expand": "Показать больше",
+    "confirm": "Оформить",
+    "showMore": "Показать ещё"
+  },
+  "book": {
+    "cardAria": "Книга {{title}}",
+    "coverAlt": "Обложка книги {{title}}",
+    "fallbackCategoryTitle": "Категория",
+    "share": "Поделиться",
+    "description": {
+      "title": "Описание",
+      "showLess": "Свернуть",
+      "showMore": "Показать больше"
+    },
+    "reviewsSection": "Отзывы",
+    "similarSection": "Похожие книги",
+    "similarEmptyTitle": "Пока нечего посоветовать",
+    "similarEmptyDescription": "Мы работаем над рекомендациями",
+    "subscribeDescription": "Подписка откроет доступ к новым релизам и этой книге.",
+    "buyDescription": "Вы получите полный доступ к книге после оформления покупки.",
+    "modalTitle": {
+      "buy": "Покупка",
+      "subscribe": "Подписка"
+    },
+    "actions": {
+      "read": "Читать",
+      "download": "Скачать",
+      "buy": "Купить",
+      "subscribe": "Подписаться",
+      "confirm": "Оформить"
+    },
+    "toast": {
+      "linkCopied": "Ссылка скопирована",
+      "linkFailed": "Не удалось скопировать ссылку",
+      "accessGranted": "Доступ к книге открыт (демо)"
+    },
+    "reviewsCount_one": "{{count}} отзыв",
+    "reviewsCount_few": "{{count}} отзыва",
+    "reviewsCount_many": "{{count}} отзывов",
+    "reviewsCount_other": "{{count}} отзывов",
+    "votes_one": "{{count}} оценка",
+    "votes_few": "{{count}} оценки",
+    "votes_many": "{{count}} оценок",
+    "votes_other": "{{count}} оценок"
+  },
+  "reviews": {
+    "emptyTitle": "Пока нет отзывов",
+    "emptyDescription": "Будьте первым, кто поделится впечатлениями",
+    "rating": "Оценка {{value}}",
+    "loadMore": "Показать ещё"
+  },
+  "similar": {
+    "empty": "Пока нечего посоветовать",
+    "aria": "Перейти к книге {{title}}"
+  },
+  "images": {
+    "bookCover": "Обложка книги {{title}}"
+  },
+  "categories": {
+    "special": {
+      "mostRead": "Самые читаемые",
+      "topRated": "Самые рейтинговые"
+    },
+    "aria": "Категория {{title}}",
+    "booksCount_one": "{{count}} книга",
+    "booksCount_few": "{{count}} книги",
+    "booksCount_many": "{{count}} книг",
+    "booksCount_other": "{{count}} книг"
+  }
+}

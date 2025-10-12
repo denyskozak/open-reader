@@ -1,6 +1,7 @@
 import type { Book } from "@/entities/book/types";
 
 import { Card, Chip, Tappable, Text, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { BookRating } from "./BookRating";
 
@@ -10,18 +11,20 @@ interface BookCardProps {
 }
 
 export function BookCard({ book, onClick }: BookCardProps): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <Tappable
       onClick={onClick}
       interactiveAnimation="background"
-      aria-label={`Книга ${book.title}`}
+      aria-label={t("book.cardAria", { title: book.title })}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <Card style={{ borderRadius: 20, overflow: "hidden" }}>
         <div style={{ position: "relative", aspectRatio: "16 / 9", background: "var(--app-section-color)" }}>
           <img
             src={book.coverUrl}
-            alt={`Обложка книги ${book.title}`}
+            alt={t("book.coverAlt", { title: book.title })}
             loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />

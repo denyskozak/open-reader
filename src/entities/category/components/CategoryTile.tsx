@@ -1,6 +1,7 @@
 import type { Category } from "@/entities/category/types";
 
 import { Card, Tappable, Text, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 interface CategoryTileProps {
   category: Category;
@@ -8,12 +9,14 @@ interface CategoryTileProps {
 }
 
 export function CategoryTile({ category, onClick }: CategoryTileProps): JSX.Element {
+  const { t } = useTranslation();
+
   return (
     <Tappable
       onClick={onClick}
       style={{ display: "block", textDecoration: "none" }}
       interactiveAnimation="background"
-      aria-label={`Категория ${category.title}`}
+      aria-label={t("categories.aria", { title: category.title })}
     >
       <Card style={{ width: '80%', padding: 16, borderRadius: 20, minHeight: 140 }}>
         <div style={{ fontSize: 32, marginBottom: 12 }}>{category.emoji ?? "📚"}</div>
@@ -21,7 +24,7 @@ export function CategoryTile({ category, onClick }: CategoryTileProps): JSX.Elem
           {category.title}
         </Title>
         <Text weight="2" style={{ color: "var(--app-subtitle-color)" }}>
-          {category.booksCount} книг
+          {t("categories.booksCount", { count: category.booksCount })}
         </Text>
       </Card>
     </Tappable>

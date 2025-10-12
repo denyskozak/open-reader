@@ -1,6 +1,7 @@
 import type { Book } from "@/entities/book/types";
 
 import { Card, Tappable, Text, Title } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 interface SimilarCarouselProps {
   books: Book[];
@@ -8,10 +9,12 @@ interface SimilarCarouselProps {
 }
 
 export function SimilarCarousel({ books, onSelect }: SimilarCarouselProps): JSX.Element {
+  const { t } = useTranslation();
+
   if (books.length === 0) {
     return (
       <Text style={{ color: "var(--app-subtitle-color)", padding: "0 16px" }}>
-        Пока нечего посоветовать
+        {t("similar.empty")}
       </Text>
     );
   }
@@ -25,13 +28,13 @@ export function SimilarCarousel({ books, onSelect }: SimilarCarouselProps): JSX.
             onClick={() => onSelect(book.id)}
             style={{ width: 160, flexShrink: 0 }}
             interactiveAnimation="background"
-            aria-label={`Перейти к книге ${book.title}`}
+            aria-label={t("similar.aria", { title: book.title })}
           >
             <Card style={{ borderRadius: 18, overflow: "hidden" }}>
               <div style={{ aspectRatio: "16 / 9", background: "var(--app-section-color)" }}>
                 <img
                   src={book.coverUrl}
-                  alt={`Обложка книги ${book.title}`}
+                  alt={t("images.bookCover", { title: book.title })}
                   loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />

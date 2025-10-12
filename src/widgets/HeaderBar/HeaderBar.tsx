@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button, Modal, Title } from "@telegram-apps/telegram-ui";
 import { TonConnectButton } from "@tonconnect/ui-react";
+import { useTranslation } from "react-i18next";
 
 import { useTheme } from "@/app/providers/ThemeProvider";
 import { useToast } from "@/shared/ui/ToastProvider";
@@ -15,11 +16,12 @@ export function HeaderBar(): JSX.Element {
   const theme = useTheme();
   const [isModalOpen, setModalOpen] = useState(false);
   const [wallet, setWallet] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const handleSelect = (name: string) => {
     setWallet(name);
     setModalOpen(false);
-    showToast(`Кошелёк ${name} подключен (демо)`);
+    showToast(t("header.wallet.connectedToast", { wallet: name }));
   };
 
   return (
@@ -43,9 +45,11 @@ export function HeaderBar(): JSX.Element {
           gap: 16,
         }}
       >
-        <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}>
-          Open Reader
-        </Title>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}> 
+            {t("app.name")}
+          </Title>
+        </div>
         <div style={{ position: "relative" }}>
           <TonConnectButton style={{ opacity: 0, pointerEvents: "none" }} />
           <Button
@@ -54,12 +58,12 @@ export function HeaderBar(): JSX.Element {
             style={{ position: "absolute", inset: 0 }}
             onClick={() => setModalOpen(true)}
           >
-            {wallet ? `Кошелёк: ${wallet}` : "Подключить кошелёк"}
+            {wallet ? t("header.wallet.connected", { wallet }) : t("header.wallet.connect")}
           </Button>
         </div>
       </div>
       <Modal open={isModalOpen} onOpenChange={setModalOpen}>
-        <Modal.Header>Выберите кошелёк</Modal.Header>
+        <Modal.Header>{t("header.wallet.select")}</Modal.Header>
         <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
           {WALLETS.map((name) => (
             <Button key={name} size="m" mode="filled" onClick={() => handleSelect(name)}>

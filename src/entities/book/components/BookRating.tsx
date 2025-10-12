@@ -1,4 +1,5 @@
 import { Text } from "@telegram-apps/telegram-ui";
+import { useTranslation } from "react-i18next";
 
 import { buildStarStates, formatRating } from "@/shared/lib/rating";
 
@@ -15,6 +16,7 @@ const STAR_SYMBOLS: Record<"full" | "half" | "empty", string> = {
 
 export function BookRating({ value, votes }: BookRatingProps): JSX.Element {
   const stars = buildStarStates(value);
+  const { t } = useTranslation();
 
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -26,7 +28,7 @@ export function BookRating({ value, votes }: BookRatingProps): JSX.Element {
           <span key={index}>{STAR_SYMBOLS[star]}</span>
         ))}
       </Text>
-      <Text style={{ color: "var(--app-subtitle-color)" }}>{votes} оценок</Text>
+      <Text style={{ color: "var(--app-subtitle-color)" }}>{t("book.votes", { count: votes })}</Text>
     </div>
   );
 }
