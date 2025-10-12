@@ -24,6 +24,14 @@ const themePalette: Record<ReaderTheme, { background: string; color: string; bor
   },
 };
 
+const getSystemTheme = (): ReaderTheme => {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    return "dark";
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
+
 type ReadingOverlayProps = {
   book: Book;
   onClose: () => void;
@@ -33,7 +41,7 @@ export function ReadingOverlay({ book, onClose }: ReadingOverlayProps): JSX.Elem
   const { t } = useTranslation();
   const [fontSize, setFontSize] = useState(18);
 
-  const [theme, setTheme] = useState<ReaderTheme>("dark");
+  const [theme, setTheme] = useState<ReaderTheme>(() => getSystemTheme());
   const palette = themePalette[theme];
 
   const paragraphs = useMemo(() => {
