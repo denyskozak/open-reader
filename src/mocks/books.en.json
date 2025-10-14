@@ -1,1050 +1,1067 @@
 [
   {
     "id": "b1",
-    "title": "Chronicles of the Silver Storm",
+    "title": "The Iliad",
     "authors": [
-      "Alena Mirskaya"
+      "Homer"
     ],
     "categories": [
-      "fantasy"
+      "fantasy",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/302b63/ffffff?text=Storm",
-    "description": "A young mage must join forces with an exiled knight to stop an ancient storm that threatens the kingdom.",
+    "description": "Homer's epic poem recounting Achilles, the wrath of the gods, and the climactic battles of the Trojan War.",
     "rating": {
       "average": 4.6,
       "votes": 812
     },
     "tags": [
-      "magic",
-      "adventure",
-      "dragons"
+      "epic poetry",
+      "Trojan War",
+      "heroism"
     ],
     "publishedAt": "2023-02-14",
     "reviewsCount": 214
   },
   {
     "id": "b2",
-    "title": "Legend of the Glass City",
+    "title": "The Odyssey",
     "authors": [
-      "Ivan Orlov"
+      "Homer"
     ],
     "categories": [
       "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Glass",
-    "description": "The guardian of a city made of glass investigates the disappearance of its source of magic and uncovers a council conspiracy.",
+    "description": "The wanderings of Odysseus from Troy to Ithaca, filled with monsters, temptations, and divine intervention.",
     "rating": {
       "average": 4.3,
       "votes": 540
     },
     "tags": [
-      "magic",
-      "intrigue",
-      "urban fantasy"
+      "voyage",
+      "myth",
+      "cunning"
     ],
     "publishedAt": "2022-08-01",
     "reviewsCount": 189
   },
   {
     "id": "b3",
-    "title": "Dance of Shadows",
+    "title": "Theogony",
     "authors": [
-      "Sergey Kotov"
+      "Hesiod"
     ],
     "categories": [
-      "fantasy",
-      "mystery"
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/111827/ffffff?text=Shadows",
-    "description": "An investigator from the spirit world unravels murders taking place simultaneously across two realities.",
+    "description": "Hesiod traces the genealogy of the gods and the creation of the cosmos from Chaos to Zeus's rule.",
     "rating": {
       "average": 4.7,
       "votes": 901
     },
     "tags": [
-      "dark fantasy",
-      "detective",
-      "spirits"
+      "cosmogony",
+      "myth",
+      "gods"
     ],
     "publishedAt": "2024-01-10",
     "reviewsCount": 276
   },
   {
     "id": "b4",
-    "title": "Call of the Abyss",
+    "title": "Works and Days",
     "authors": [
-      "Maria Yasnaya"
+      "Hesiod"
     ],
     "categories": [
-      "fantasy",
-      "sci-fi"
+      "self-dev",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Abyss",
-    "description": "A starship crew encounters the ancient gods left behind by a fallen civilization.",
+    "description": "Advice for farmers, sailors, and citizens that weaves moral lessons with the rhythms of rural life.",
     "rating": {
       "average": 4.1,
       "votes": 420
     },
     "tags": [
-      "space",
-      "mythology",
-      "adventure"
+      "didactic",
+      "agriculture",
+      "wisdom"
     ],
     "publishedAt": "2021-09-19",
     "reviewsCount": 132
   },
   {
     "id": "b5",
-    "title": "The Last Tower",
+    "title": "Homeric Hymns",
     "authors": [
-      "Lev Pogodin"
+      "Homeric Poets"
     ],
     "categories": [
       "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/4c1d95/ffffff?text=Tower",
-    "description": "An archmage’s apprentice must save the tower of knowledge before the void of forgotten spells consumes it.",
+    "description": "A cycle of hymns celebrating the Olympian gods, their births, powers, and blessings for mortals.",
     "rating": {
       "average": 4.5,
       "votes": 610
     },
     "tags": [
-      "apprentices",
-      "spells",
-      "heroine"
+      "hymns",
+      "ritual",
+      "myth"
     ],
     "publishedAt": "2020-05-30",
     "reviewsCount": 201
   },
   {
     "id": "b6",
-    "title": "Wings of the Northern Wind",
+    "title": "Argonautica",
     "authors": [
-      "Svetlana Rey"
+      "Apollonius of Rhodes"
     ],
     "categories": [
-      "fantasy",
-      "romance"
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/1e40af/ffffff?text=Wind",
-    "description": "A princess of the northern kingdom falls for a captive dragonslayer who hides a magical gift.",
+    "description": "Jason and the Argonauts sail for the Golden Fleece, confronting harpies, clashing rocks, and rival kings.",
     "rating": {
       "average": 4.4,
       "votes": 488
     },
     "tags": [
-      "romance",
-      "politics",
-      "dragons"
+      "quest",
+      "Jason",
+      "Golden Fleece"
     ],
     "publishedAt": "2023-11-07",
     "reviewsCount": 167
   },
   {
     "id": "b7",
-    "title": "Misty Legacy",
+    "title": "Library of Greek Mythology",
     "authors": [
-      "Dmitry Astakhov"
+      "Apollodorus"
     ],
     "categories": [
-      "fantasy"
+      "fantasy",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Mist",
-    "description": "An orphan returns home to claim an inheritance and is drawn into a war between magical clans.",
+    "description": "A handbook of myths collecting heroes, monsters, and genealogies from the age of the gods to the Trojan War.",
     "rating": {
       "average": 4,
       "votes": 320
     },
     "tags": [
-      "magical clans",
-      "family",
-      "journey"
+      "mythography",
+      "genealogy",
+      "heroes"
     ],
     "publishedAt": "2019-03-15",
     "reviewsCount": 98
   },
   {
     "id": "b8",
-    "title": "Orbit of Memory",
+    "title": "Dionysiaca",
     "authors": [
-      "Natalia Krylova"
+      "Nonnus of Panopolis"
     ],
     "categories": [
-      "sci-fi"
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Orbit",
-    "description": "A scientist restores the memory of a Martian colony, erasing false recollections and exposing sabotage.",
+    "description": "A late antique epic following Dionysus as he conquers the East with revels, miracles, and divine battles.",
     "rating": {
       "average": 4.6,
       "votes": 760
     },
     "tags": [
-      "mars",
-      "artificial intelligence",
-      "thriller"
+      "Dionysus",
+      "late antiquity",
+      "epic"
     ],
     "publishedAt": "2024-04-12",
     "reviewsCount": 245
   },
   {
     "id": "b9",
-    "title": "Singularity Tomorrow",
+    "title": "Prometheus Bound",
     "authors": [
-      "Kirill More"
+      "Aeschylus"
     ],
     "categories": [
-      "sci-fi"
+      "fantasy",
+      "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/052e16/ffffff?text=Singularity",
-    "description": "A hacker tries to stop the launch of a quantum network that could enslave human consciousness.",
+    "description": "Prometheus defies Zeus to gift fire to humanity and endures chains while foretelling the fate of Olympus.",
     "rating": {
       "average": 4.2,
       "votes": 530
     },
     "tags": [
-      "cyberpunk",
-      "quantum tech",
-      "thriller"
+      "tragedy",
+      "defiance",
+      "myth"
     ],
     "publishedAt": "2022-12-05",
     "reviewsCount": 156
   },
   {
     "id": "b10",
-    "title": "Limits of Dawn",
+    "title": "Agamemnon",
     "authors": [
-      "Oksana Vega"
+      "Aeschylus"
     ],
     "categories": [
-      "sci-fi"
+      "mystery",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/164e63/ffffff?text=Dawn",
-    "description": "An exploration pilot meets parallel versions of herself and must choose a single path for humanity.",
+    "description": "The victorious king returns from Troy to a palace filled with grudges, omens, and a queen planning revenge.",
     "rating": {
       "average": 4.8,
       "votes": 910
     },
     "tags": [
-      "multiverse",
-      "psychology",
-      "space"
+      "tragedy",
+      "revenge",
+      "House of Atreus"
     ],
     "publishedAt": "2023-06-18",
     "reviewsCount": 312
   },
   {
     "id": "b11",
-    "title": "City Under the Dome",
+    "title": "The Libation Bearers",
     "authors": [
-      "Roman Tsoy"
+      "Aeschylus"
     ],
     "categories": [
-      "sci-fi"
+      "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/14532d/ffffff?text=Dome",
-    "description": "Inside a climate-controlled dome, revolution brews, and an engineer must decide whether to shut the system down.",
+    "description": "Orestes returns in disguise to avenge his father, guided by Apollo and the loyal libation-bearing women.",
     "rating": {
       "average": 3.9,
       "votes": 402
     },
     "tags": [
-      "dystopia",
-      "ecology",
-      "drama"
+      "tragedy",
+      "vengeance",
+      "oracle"
     ],
     "publishedAt": "2020-10-22",
     "reviewsCount": 120
   },
   {
     "id": "b12",
-    "title": "Light of Cold Stars",
+    "title": "The Eumenides",
     "authors": [
-      "Elizaveta Ray"
+      "Aeschylus"
     ],
     "categories": [
-      "sci-fi",
-      "romance"
+      "mystery",
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Stars",
-    "description": "A space researcher and a rogue pilot are stranded on an ice world and must learn to trust each other.",
+    "description": "The Furies pursue Orestes to Athens, where Athena establishes a court of law to calm divine vengeance.",
     "rating": {
       "average": 4.4,
       "votes": 470
     },
     "tags": [
-      "survival",
-      "romance",
-      "space"
+      "tragedy",
+      "justice",
+      "Furies"
     ],
     "publishedAt": "2021-02-11",
     "reviewsCount": 158
   },
   {
     "id": "b13",
-    "title": "Algorithm of Hope",
+    "title": "Oedipus Rex",
     "authors": [
-      "Mikhail Zharov"
+      "Sophocles"
     ],
     "categories": [
-      "sci-fi",
-      "non-fiction"
+      "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/134e4a/ffffff?text=Hope",
-    "description": "A semi-documentary tale about how a neural network helps humanity survive a global crisis of trust.",
+    "description": "King Oedipus hunts the source of a plague and discovers the hidden crimes that define his tragic destiny.",
     "rating": {
       "average": 4,
       "votes": 388
     },
     "tags": [
-      "neural networks",
-      "social sci-fi",
-      "ethics"
+      "tragedy",
+      "prophecy",
+      "Thebes"
     ],
     "publishedAt": "2019-11-29",
     "reviewsCount": 102
   },
   {
     "id": "b14",
-    "title": "Code of Silence",
+    "title": "Antigone",
     "authors": [
-      "Timur Safin"
+      "Sophocles"
     ],
     "categories": [
-      "sci-fi"
+      "mystery",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/0b1120/ffffff?text=Code",
-    "description": "A language designed for alien negotiations becomes the key to unlocking the secrets of human memory.",
+    "description": "Antigone challenges the edict of King Creon to honor her brother, sparking debates on law and loyalty.",
     "rating": {
       "average": 4.5,
       "votes": 655
     },
     "tags": [
-      "linguistics",
-      "aliens",
-      "thriller"
+      "tragedy",
+      "law",
+      "family"
     ],
     "publishedAt": "2024-03-05",
     "reviewsCount": 220
   },
   {
     "id": "b15",
-    "title": "The Antique Key",
+    "title": "Electra",
     "authors": [
-      "Anna Vetrova"
+      "Sophocles"
     ],
     "categories": [
       "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Key",
-    "description": "A detective and a conservator search for the owner of a key found in an old mansion and reveal a vanished family’s secret.",
+    "description": "Electra waits for her brother's return while plotting revenge against the murderers of their father.",
     "rating": {
       "average": 4.2,
       "votes": 430
     },
     "tags": [
-      "history",
-      "family mystery",
-      "detective"
+      "tragedy",
+      "vengeance",
+      "siblings"
     ],
     "publishedAt": "2020-07-07",
     "reviewsCount": 140
   },
   {
     "id": "b16",
-    "title": "Lies on the Shore",
+    "title": "Ajax",
     "authors": [
-      "Georgy Sinkov"
+      "Sophocles"
     ],
     "categories": [
       "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Shore",
-    "description": "A journalist returns to a seaside hometown to investigate the disappearance of a friend twenty years ago.",
+    "description": "The proud warrior Ajax grapples with humiliation after Achilles' armor is awarded to Odysseus.",
     "rating": {
       "average": 4.1,
       "votes": 350
     },
     "tags": [
-      "psychology",
-      "investigation",
-      "past secrets"
+      "tragedy",
+      "honor",
+      "madness"
     ],
     "publishedAt": "2021-05-25",
     "reviewsCount": 118
   },
   {
     "id": "b17",
-    "title": "Station Mirror",
+    "title": "Medea",
     "authors": [
-      "Nina Lesnaya"
+      "Euripides"
     ],
     "categories": [
       "mystery",
-      "fantasy"
+      "romance"
     ],
     "coverUrl": "https://placehold.co/480x270/0b1120/ffffff?text=Mirror",
-    "description": "A mirror appears in an old train station showing future crimes, and a sleuth races to prevent tragedies.",
+    "description": "Betrayed by Jason, Medea plots a terrible revenge that challenges the bonds of love and loyalty.",
     "rating": {
       "average": 4.6,
       "votes": 512
     },
     "tags": [
-      "mysticism",
-      "alternate future",
-      "detective"
+      "tragedy",
+      "revenge",
+      "passion"
     ],
     "publishedAt": "2023-09-14",
     "reviewsCount": 204
   },
   {
     "id": "b18",
-    "title": "Room 217",
+    "title": "The Bacchae",
     "authors": [
-      "Vladimir Ronzhin"
+      "Euripides"
     ],
     "categories": [
-      "mystery"
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/1f2937/ffffff?text=Room",
-    "description": "Guests vanish from a luxury hotel, forcing the manager to uncover the secret of a room no one can book.",
+    "description": "Dionysus returns to Thebes, leading ecstatic followers whose rites overturn the city's order.",
     "rating": {
       "average": 3.8,
       "votes": 275
     },
     "tags": [
-      "thriller",
-      "hotel",
-      "intrigue"
+      "tragedy",
+      "ecstasy",
+      "divine power"
     ],
     "publishedAt": "2018-12-02",
     "reviewsCount": 77
   },
   {
     "id": "b19",
-    "title": "The Architect's Cipher",
+    "title": "Hippolytus",
     "authors": [
-      "Margarita Lis"
+      "Euripides"
     ],
     "categories": [
-      "mystery",
-      "history"
+      "romance",
+      "mystery"
     ],
     "coverUrl": "https://placehold.co/480x270/14532d/ffffff?text=Cipher",
-    "description": "A historian deciphers letters from an architect who hid directions to an order’s treasure.",
+    "description": "The chaste Hippolytus spurns Aphrodite and faces a deadly accusation when Phaedra falls in love with him.",
     "rating": {
       "average": 4.3,
       "votes": 389
     },
     "tags": [
-      "puzzle",
-      "history",
-      "treasure"
+      "tragedy",
+      "Aphrodite",
+      "fate"
     ],
     "publishedAt": "2022-04-30",
     "reviewsCount": 135
   },
   {
     "id": "b20",
-    "title": "Midnight Call",
+    "title": "Alcestis",
     "authors": [
-      "Alexander Shum"
+      "Euripides"
     ],
     "categories": [
-      "mystery"
+      "romance",
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Call",
-    "description": "A psychologist investigates strange phone calls that predict the deaths of people in a small town.",
+    "description": "Alcestis offers her life for her husband Admetus, and Heracles wrestles with Death to bring her back.",
     "rating": {
       "average": 4,
       "votes": 300
     },
     "tags": [
-      "suspense",
-      "psychology",
-      "small town"
+      "tragedy",
+      "sacrifice",
+      "rescue"
     ],
     "publishedAt": "2023-01-03",
     "reviewsCount": 110
   },
   {
     "id": "b21",
-    "title": "Heart of the Ocean",
+    "title": "Lysistrata",
     "authors": [
-      "Elena Chernova"
+      "Aristophanes"
     ],
     "categories": [
-      "romance"
+      "romance",
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/1e3a8a/ffffff?text=Ocean",
-    "description": "A marine biologist and a navigator fall in love while saving an island resort from an approaching storm.",
+    "description": "A comic strike of Athenian and Spartan women refuses intimacy until the endless Peloponnesian War ends.",
     "rating": {
       "average": 4.5,
       "votes": 510
     },
     "tags": [
-      "sea",
-      "romance",
-      "vacation"
+      "comedy",
+      "peace",
+      "women"
     ],
     "publishedAt": "2022-06-21",
     "reviewsCount": 165
   },
   {
     "id": "b22",
-    "title": "Letters Across the Years",
+    "title": "The Birds",
     "authors": [
-      "Marina Veda"
+      "Aristophanes"
     ],
     "categories": [
-      "romance",
-      "history"
+      "fantasy",
+      "romance"
     ],
     "coverUrl": "https://placehold.co/480x270/6b21a8/ffffff?text=Letters",
-    "description": "Childhood friends exchange letters over decades, rediscovering feelings amid life’s twists.",
+    "description": "Two Athenians join the birds to build a sky-city between gods and mortals, dreaming of a new utopia.",
     "rating": {
       "average": 4.7,
       "votes": 648
     },
     "tags": [
-      "epistolary",
-      "second chance",
-      "friendship"
+      "comedy",
+      "utopia",
+      "satire"
     ],
     "publishedAt": "2021-09-09",
     "reviewsCount": 208
   },
   {
     "id": "b23",
-    "title": "Lavender Season",
+    "title": "The Frogs",
     "authors": [
-      "Tatyana Lavr"
+      "Aristophanes"
     ],
     "categories": [
-      "romance"
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/7c3aed/ffffff?text=Lavender",
-    "description": "A chef moves to Provence to open a small bistro and learns to trust love again.",
+    "description": "Dionysus descends to Hades to rescue a great tragedian, debating art and laughter among the dead.",
     "rating": {
       "average": 4.1,
       "votes": 360
     },
     "tags": [
-      "France",
-      "culinary",
-      "healing"
+      "comedy",
+      "theatre",
+      "underworld"
     ],
     "publishedAt": "2019-05-17",
     "reviewsCount": 95
   },
   {
     "id": "b24",
-    "title": "Pulse of the Metropolis",
+    "title": "Histories",
     "authors": [
-      "Daria Pshenichnaya"
+      "Herodotus"
     ],
     "categories": [
-      "romance",
-      "business"
+      "history",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Pulse",
-    "description": "A doctor and an architect navigate careers and feelings while launching a community clinic in a megacity.",
+    "description": "Herodotus chronicles the Persian Wars and the customs of peoples from Egypt to Scythia in vivid detail.",
     "rating": {
       "average": 4.3,
       "votes": 402
     },
     "tags": [
-      "city life",
-      "career",
-      "romance"
+      "chronicle",
+      "Persian Wars",
+      "ethnography"
     ],
     "publishedAt": "2023-03-28",
     "reviewsCount": 142
   },
   {
     "id": "b25",
-    "title": "Warmth of Winter Light",
+    "title": "History of the Peloponnesian War",
     "authors": [
-      "Ksenia Dal"
+      "Thucydides"
     ],
     "categories": [
-      "romance"
+      "history",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/1c1917/ffffff?text=Light",
-    "description": "A photographer searching for inspiration travels to a mountain village and falls for the local chef.",
+    "description": "Thucydides analyzes the conflict between Athens and Sparta with speeches, strategy, and political insight.",
     "rating": {
       "average": 4,
       "votes": 280
     },
     "tags": [
-      "winter",
-      "cozy",
-      "love"
+      "analysis",
+      "strategy",
+      "politics"
     ],
     "publishedAt": "2020-12-15",
     "reviewsCount": 88
   },
   {
     "id": "b26",
-    "title": "Empires of Sand",
+    "title": "Anabasis",
     "authors": [
-      "Stanislav Rudoy"
+      "Xenophon"
     ],
     "categories": [
-      "history",
-      "fantasy"
+      "history"
     ],
     "coverUrl": "https://placehold.co/480x270/78350f/ffffff?text=Sand",
-    "description": "The fall of a desert empire told through the eyes of a chronicler who doubts the conquerors’ cause.",
+    "description": "Xenophon leads the Ten Thousand through hostile Persia, recounting battles, councils, and survival.",
     "rating": {
       "average": 4.4,
       "votes": 520
     },
     "tags": [
-      "ancient world",
-      "politics",
-      "epic"
+      "expedition",
+      "memoir",
+      "Persia"
     ],
     "publishedAt": "2018-04-11",
     "reviewsCount": 174
   },
   {
     "id": "b27",
-    "title": "Chronicle of the Northern Route",
+    "title": "Cyropaedia",
     "authors": [
-      "Oleg Zhuravlev"
+      "Xenophon"
     ],
     "categories": [
-      "history"
+      "history",
+      "self-dev",
+      "business"
     ],
     "coverUrl": "https://placehold.co/480x270/3f6212/ffffff?text=North",
-    "description": "A documentary-style account of a polar expedition and its impact on Arctic exploration.",
+    "description": "An idealized education of Cyrus the Great offers lessons on leadership, empire, and virtuous rule.",
     "rating": {
       "average": 4.2,
       "votes": 410
     },
     "tags": [
-      "expedition",
-      "Arctic",
-      "documentary"
+      "leadership",
+      "Persia",
+      "education"
     ],
     "publishedAt": "2020-01-20",
     "reviewsCount": 130
   },
   {
     "id": "b28",
-    "title": "Time of Troubles",
+    "title": "Oeconomicus",
     "authors": [
-      "Lyudmila Knyazeva"
+      "Xenophon"
     ],
     "categories": [
-      "history"
+      "business",
+      "self-dev"
     ],
     "coverUrl": "https://placehold.co/480x270/422006/ffffff?text=Time",
-    "description": "A family of merchants struggles to survive during Russia’s seventeenth-century turmoil.",
+    "description": "Socrates discusses household management and agriculture as foundations for prosperity and harmony.",
     "rating": {
       "average": 4.1,
       "votes": 355
     },
     "tags": [
-      "Russia",
-      "family",
-      "history"
+      "household",
+      "management",
+      "agriculture"
     ],
     "publishedAt": "2017-09-05",
     "reviewsCount": 111
   },
   {
     "id": "b29",
-    "title": "The Silk Road",
+    "title": "On Horsemanship",
     "authors": [
-      "Azamat Rakhimov"
+      "Xenophon"
     ],
     "categories": [
-      "history",
-      "non-fiction"
+      "self-dev",
+      "business"
     ],
     "coverUrl": "https://placehold.co/480x270/854d0e/ffffff?text=Silk",
-    "description": "A study of the great trade route and its influence on the modern global economy.",
+    "description": "Practical guidance on choosing, training, and caring for horses for war and parade.",
     "rating": {
       "average": 4.5,
       "votes": 610
     },
     "tags": [
-      "economics",
-      "trade",
-      "history"
+      "cavalry",
+      "training",
+      "care"
     ],
     "publishedAt": "2022-02-18",
     "reviewsCount": 205
   },
   {
     "id": "b30",
-    "title": "Voices of the Revolution",
+    "title": "Parallel Lives",
     "authors": [
-      "Inga Solovyova"
+      "Plutarch"
     ],
     "categories": [
-      "history"
+      "history",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/5b21b6/ffffff?text=Voices",
-    "description": "A collection of diaries and letters from participants in the early twentieth-century uprisings.",
+    "description": "Paired biographies of Greek and Roman leaders reveal character, fortune, and moral choices across eras.",
     "rating": {
       "average": 3.9,
       "votes": 290
     },
     "tags": [
-      "diaries",
-      "20th century",
-      "history"
+      "biography",
+      "comparative",
+      "morals"
     ],
     "publishedAt": "2021-01-31",
     "reviewsCount": 94
   },
   {
     "id": "b31",
-    "title": "Habit of Greatness",
+    "title": "Moralia",
     "authors": [
-      "Igor Malyshev"
+      "Plutarch"
     ],
     "categories": [
-      "self-dev"
+      "self-dev",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/155e75/ffffff?text=Habit",
-    "description": "A practical guide to building resilient habits with a focus on micro changes.",
+    "description": "Essays and dialogues on virtue, religion, and daily conduct drawn from the wisdom of the ancient world.",
     "rating": {
       "average": 4.3,
       "votes": 780
     },
     "tags": [
-      "habits",
-      "motivation",
-      "productivity"
+      "essays",
+      "ethics",
+      "religion"
     ],
     "publishedAt": "2020-03-14",
     "reviewsCount": 320
   },
   {
     "id": "b32",
-    "title": "Mindfulness on the Run",
+    "title": "Republic",
     "authors": [
-      "Kira Fomin"
+      "Plato"
     ],
     "categories": [
-      "self-dev",
+      "business",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/047857/ffffff?text=Mindful",
-    "description": "Keeping calm in a bustling city: breathing practices and short meditations.",
+    "description": "Plato imagines a just city ruled by philosopher guardians, exploring education, art, and the soul.",
     "rating": {
       "average": 4.1,
       "votes": 450
     },
     "tags": [
-      "mindfulness",
-      "health",
-      "meditation"
+      "justice",
+      "philosophy",
+      "ideal city"
     ],
     "publishedAt": "2023-05-02",
     "reviewsCount": 150
   },
   {
     "id": "b33",
-    "title": "Leader’s Emotional Intelligence",
+    "title": "Symposium",
     "authors": [
-      "Viktor Savin"
+      "Plato"
     ],
     "categories": [
-      "self-dev",
-      "business"
+      "romance",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/1e293b/ffffff?text=EQ",
-    "description": "How emotional intelligence shapes team leadership, with case studies from modern companies.",
+    "description": "A drinking party becomes a series of speeches on love, beauty, and the ladder that leads souls to the divine.",
     "rating": {
       "average": 4.4,
       "votes": 690
     },
     "tags": [
-      "leadership",
-      "emotional intelligence",
-      "team"
+      "dialogue",
+      "love",
+      "philosophy"
     ],
     "publishedAt": "2022-07-19",
     "reviewsCount": 240
   },
   {
     "id": "b34",
-    "title": "The Discipline Path",
+    "title": "Phaedo",
     "authors": [
-      "Alexey Nemov"
+      "Plato"
     ],
     "categories": [
-      "self-dev"
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Discipline",
-    "description": "A system for building discipline through small wins and tracking progress.",
+    "description": "On the day of Socrates' death, his companions discuss the immortality of the soul and the philosopher's life.",
     "rating": {
       "average": 4,
       "votes": 520
     },
     "tags": [
-      "discipline",
-      "coaching",
-      "motivation"
+      "dialogue",
+      "soul",
+      "Socrates"
     ],
     "publishedAt": "2019-06-06",
     "reviewsCount": 180
   },
   {
     "id": "b35",
-    "title": "The Power of Pauses",
+    "title": "Timaeus",
     "authors": [
-      "Ekaterina Lim"
+      "Plato"
     ],
     "categories": [
-      "self-dev"
+      "sci-fi",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Pause",
-    "description": "How scheduled breaks and rest can boost productivity and creativity.",
+    "description": "Plato's cosmological dialogue describes the world's soul, geometry, and the harmony of the heavens.",
     "rating": {
       "average": 4.2,
       "votes": 470
     },
     "tags": [
-      "rest",
-      "balance",
-      "well-being"
+      "cosmology",
+      "world soul",
+      "elements"
     ],
     "publishedAt": "2021-08-24",
     "reviewsCount": 156
   },
   {
     "id": "b36",
-    "title": "Digital Strategies",
+    "title": "Laws",
     "authors": [
-      "Andrey Kotin"
+      "Plato"
     ],
     "categories": [
       "business",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0e7490/ffffff?text=Digital",
-    "description": "How companies adapt to digital change: strategies, case studies, and practical tools.",
+    "description": "In Plato's final dialogue, elder statesmen design laws for a new colony balancing reason, ritual, and order.",
     "rating": {
       "average": 4.5,
       "votes": 620
     },
     "tags": [
-      "digital transformation",
-      "business",
-      "strategy"
+      "legislation",
+      "statecraft",
+      "education"
     ],
     "publishedAt": "2023-02-10",
     "reviewsCount": 210
   },
   {
     "id": "b37",
-    "title": "Market of Ideas",
+    "title": "Nicomachean Ethics",
     "authors": [
-      "Pavel Denisov"
+      "Aristotle"
     ],
     "categories": [
-      "business"
+      "self-dev",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Ideas",
-    "description": "Open innovation and ways to implement employee ideas in large organizations.",
+    "description": "Aristotle maps the virtues that lead to eudaimonia, debating friendship, justice, and the golden mean.",
     "rating": {
       "average": 4.1,
       "votes": 380
     },
     "tags": [
-      "innovation",
-      "management",
-      "corporate culture"
+      "virtue",
+      "happiness",
+      "ethics"
     ],
     "publishedAt": "2020-11-30",
     "reviewsCount": 122
   },
   {
     "id": "b38",
-    "title": "Investor of a New Era",
+    "title": "Politics",
     "authors": [
-      "Olga Terekhova"
+      "Aristotle"
     ],
     "categories": [
-      "business"
+      "business",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/78350f/ffffff?text=Investor",
-    "description": "A hands-on investment guide for navigating volatility and uncertainty.",
+    "description": "An analysis of constitutions and civic life that studies how communities pursue the common good.",
     "rating": {
       "average": 4.3,
       "votes": 560
     },
     "tags": [
-      "finance",
-      "investing",
-      "economy"
+      "constitution",
+      "civic life",
+      "states"
     ],
     "publishedAt": "2021-04-08",
     "reviewsCount": 188
   },
   {
     "id": "b39",
-    "title": "Teams of Tomorrow",
+    "title": "Poetics",
     "authors": [
-      "Yuri Antipov"
+      "Aristotle"
     ],
     "categories": [
-      "business"
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/134e4a/ffffff?text=Teams",
-    "description": "How to build distributed teams and sustain a culture of collaboration.",
+    "description": "A foundational treatise on tragedy and epic poetry that defines plot, catharsis, and poetic imitation.",
     "rating": {
       "average": 4,
       "votes": 420
     },
     "tags": [
-      "remote work",
-      "team",
-      "culture"
+      "theory",
+      "tragedy",
+      "poetry"
     ],
     "publishedAt": "2022-10-12",
     "reviewsCount": 140
   },
   {
     "id": "b40",
-    "title": "Risk and Growth",
+    "title": "Physics",
     "authors": [
-      "Galina Cherepanova"
+      "Aristotle"
     ],
     "categories": [
-      "business"
+      "sci-fi",
+      "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Risk",
-    "description": "Research on risk management strategies for startups and fast-scaling companies.",
+    "description": "Aristotle investigates nature, motion, and causation, laying the groundwork for classical science.",
     "rating": {
       "average": 4.2,
       "votes": 470
     },
     "tags": [
-      "startup",
-      "strategy",
-      "management"
+      "nature",
+      "motion",
+      "cause"
     ],
     "publishedAt": "2019-08-16",
     "reviewsCount": 160
   },
   {
     "id": "b41",
-    "title": "Physics in Pictures",
+    "title": "Elements",
     "authors": [
-      "Alexander Melnikov"
+      "Euclid"
     ],
     "categories": [
+      "sci-fi",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Physics",
-    "description": "Complex physics phenomena explained through visual stories and comics.",
+    "description": "Thirteen books of geometry present axioms, proofs, and elegant constructions that shaped mathematics.",
     "rating": {
       "average": 4.6,
       "votes": 710
     },
     "tags": [
-      "physics",
-      "visualization",
-      "education"
+      "geometry",
+      "axioms",
+      "proofs"
     ],
     "publishedAt": "2021-03-03",
     "reviewsCount": 230
   },
   {
     "id": "b42",
-    "title": "Everyday Biology",
+    "title": "Almagest",
     "authors": [
-      "Elizar Stepanov"
+      "Ptolemy"
     ],
     "categories": [
+      "sci-fi",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Biology",
-    "description": "How biology shapes our daily decisions, from nutrition to social ties.",
+    "description": "Ptolemy's astronomical compendium models the heavens with circles, tables, and meticulous observation.",
     "rating": {
       "average": 4.1,
       "votes": 360
     },
     "tags": [
-      "biology",
-      "health",
-      "behavior"
+      "astronomy",
+      "stars",
+      "mathematics"
     ],
     "publishedAt": "2020-04-27",
     "reviewsCount": 115
   },
   {
     "id": "b43",
-    "title": "Universe in Your Palm",
+    "title": "Enchiridion",
     "authors": [
-      "Pyotr Saveliev"
+      "Epictetus"
     ],
     "categories": [
+      "self-dev",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/0f172a/ffffff?text=Universe",
-    "description": "A popular science guide to astrophysics focusing on the latest discoveries.",
+    "description": "A concise Stoic manual teaching how to distinguish what is up to us and cultivate inner freedom.",
     "rating": {
       "average": 4.5,
       "votes": 590
     },
     "tags": [
-      "astronomy",
-      "space",
-      "science"
+      "stoicism",
+      "discipline",
+      "serenity"
     ],
     "publishedAt": "2022-11-01",
     "reviewsCount": 200
   },
   {
     "id": "b44",
-    "title": "Math Without Fear",
+    "title": "Meditations",
     "authors": [
-      "Daria Kruglova"
+      "Marcus Aurelius"
     ],
     "categories": [
+      "self-dev",
       "non-fiction"
     ],
     "coverUrl": "https://placehold.co/480x270/334155/ffffff?text=Math",
-    "description": "A practical guide for anyone intimidated by math, with real-life exercises and problems.",
+    "description": "The Roman emperor writes private notes in Greek on duty, nature, and maintaining a tranquil mind.",
     "rating": {
       "average": 4.2,
       "votes": 420
     },
     "tags": [
-      "math",
-      "education",
-      "practice"
+      "stoicism",
+      "emperor",
+      "reflection"
     ],
     "publishedAt": "2023-08-20",
     "reviewsCount": 145
   },
   {
     "id": "b45",
-    "title": "Brain and Music",
+    "title": "Daphnis and Chloe",
     "authors": [
-      "Leonid Fadeev"
+      "Longus"
     ],
     "categories": [
-      "non-fiction",
-      "self-dev"
+      "romance",
+      "fantasy"
     ],
     "coverUrl": "https://placehold.co/480x270/312e81/ffffff?text=Music",
-    "description": "Exploring how music affects the brain, with exercises for boosting creativity through sound.",
+    "description": "A pastoral romance follows two foundlings on Lesbos as they discover love amid nymphs and rustic festivals.",
     "rating": {
       "average": 4.4,
       "votes": 530
     },
     "tags": [
-      "music",
-      "neuroscience",
-      "creativity"
+      "pastoral",
+      "Lesbos",
+      "coming of age"
     ],
     "publishedAt": "2021-06-29",
     "reviewsCount": 188
