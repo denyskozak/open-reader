@@ -9,6 +9,7 @@ import type { Book, ID } from "@/entities/book/types";
 import { BookRating } from "@/entities/book/components/BookRating";
 import { SimilarCarousel } from "@/widgets/SimilarCarousel/SimilarCarousel";
 import { ReviewsList } from "@/widgets/ReviewsList/ReviewsList";
+import { useScrollToTop } from "@/shared/hooks/useScrollToTop";
 import { ErrorBanner } from "@/shared/ui/ErrorBanner";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { useToast } from "@/shared/ui/ToastProvider";
@@ -33,6 +34,8 @@ export default function BookPage(): JSX.Element {
   const [isPurchaseModalOpen, setPurchaseModalOpen] = useState(false);
   const [isReading, setIsReading] = useState(false);
   const [isPreviewMode, setIsPreviewMode] = useState(false);
+
+  useScrollToTop([id]);
 
   const loadBook = useCallback(async () => {
     if (!id) {
