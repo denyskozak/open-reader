@@ -47,22 +47,24 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
         justifyContent: "center",
         backgroundColor: themePalette[theme].background,
         zIndex: 9999,
+          width: '100%',
+          height: '100%',
         opacity: visible ? 1 : 0,
         transition: "opacity 400ms ease",
         pointerEvents: visible ? "auto" : "none",
       }}
     >
-      <div
-        style={{
-          width: 126,
-          height: 126,
-          borderRadius: "50%",
-          backgroundColor: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      {/*<div*/}
+      {/*  style={{*/}
+      {/*    width: 126,*/}
+      {/*    height: 126,*/}
+      {/*    borderRadius: "50%",*/}
+      {/*    backgroundColor: "#fff",*/}
+      {/*    display: "flex",*/}
+      {/*    alignItems: "center",*/}
+      {/*    justifyContent: "center",*/}
+      {/*  }}*/}
+      {/*>*/}
         <img
           src="/logo.webp"
           alt="Open Reader logo"
@@ -72,7 +74,7 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
             objectFit: "contain",
           }}
         />
-      </div>
+      {/*</div>*/}
     </div>
   );
 }

@@ -18,15 +18,16 @@ export function BookCard({ book, onClick }: BookCardProps): JSX.Element {
       onClick={onClick}
       interactiveAnimation="background"
       aria-label={t("book.cardAria", { title: book.title })}
-      style={{ textDecoration: "none", color: "inherit" }}
+      style={{ textDecoration: "none", color: "inherit", display: "flex", justifyContent: "center" }}
     >
       <Card style={{ borderRadius: 20, overflow: "hidden" }}>
-        <div style={{ position: "relative", aspectRatio: "16 / 9", background: "var(--app-section-color)" }}>
+        <div style={{ position: "relative", width: "80vw", aspectRatio: "3 / 3", background: "var(--app-section-color)" }}>
           <img
-            src={book.coverUrl}
+            src={`/images/books/${book.id}.jpg`}
             alt={t("book.coverAlt", { title: book.title })}
             loading="lazy"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            onError={event => event.currentTarget.src='/images/books/b33.jpg' }
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </div>
         <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 8 }}>

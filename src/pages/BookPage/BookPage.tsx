@@ -202,32 +202,35 @@ export default function BookPage(): JSX.Element {
     <>
       <main style={{ margin: "0 auto", maxWidth: 720, paddingBottom: 96 }}>
         <div style={{ position: "relative" }}>
-          <div style={{ padding: 16 }}>
-            <Card style={{ borderRadius: 24, overflow: "hidden" }}>
-              <div style={{ position: "relative", aspectRatio: "16 / 9" }}>
-                <img
-                      src={book.coverUrl}
-                      alt={t("book.coverAlt", { title: book.title })}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                    <Button
+          <div style={{ padding: 16, gap: 16, display: "flex", flexDirection: 'column' }}>
+              <div>
+                  <Title level="1" weight="2">
+                      {book.title}
+                  </Title>
+                  <div style={{ color: "var(--app-subtitle-color)" }}>{book.authors.join(", ")}</div>
+                  <Button
                       aria-label={t("book.share")}
                       mode="plain"
                       onClick={handleShare}
                       style={{ position: "absolute", top: 12, right: 12 }}
-                    >
+                  >
                       🔗
-                    </Button>
+                  </Button>
+              </div>
+              <Card style={{ borderRadius: 24, margin: '0 auto', overflow: "hidden",  width: '80vw' }}>
+              <div style={{ position: "relative", aspectRatio: "10 / 12" }}>
+                <img
+                      src={`/images/books/${book.id}.jpg`}
+                      alt={t("book.coverAlt", { title: book.title })}
+                      onError={event => event.currentTarget.src='/images/books/b33.jpg' }
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
                   </div>
                 </Card>
               </div>
             </div>
             <div style={{ padding: "0 16px", display: "flex", flexDirection: "column", gap: 16 }}>
-              <Title level="1" weight="2">
-                {book.title}
-              </Title>
-              <div style={{ color: "var(--app-subtitle-color)" }}>{book.authors.join(", ")}</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {book.tags.map((tag) => (
                   <Chip key={tag} mode="outline">
                     #{tag}

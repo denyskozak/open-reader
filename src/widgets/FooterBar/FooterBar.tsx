@@ -8,6 +8,7 @@ export function FooterBar(): JSX.Element {
   const theme = useTheme();
   const { t } = useTranslation();
 
+
   return (
     <footer
       style={{

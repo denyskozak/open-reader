@@ -12,7 +12,9 @@ export function LanguageToggle(): JSX.Element {
   const currentLanguage = i18n.language;
   const normalizedLanguage = currentLanguage.slice(0, 2);
 
-  const label = LANGUAGE_LABELS[normalizedLanguage] ?? normalizedLanguage.toUpperCase();
+    const nextLanguage = normalizedLanguage === "ru" ? "en" : "ru";
+
+    const label = LANGUAGE_LABELS[nextLanguage] ?? nextLanguage.toUpperCase();
 
   const ariaLabel = useMemo(() => {
     const languageNameKey = normalizedLanguage === "ru" ? "languages.ru" : "languages.en";
@@ -20,7 +22,6 @@ export function LanguageToggle(): JSX.Element {
   }, [normalizedLanguage, t]);
 
   const handleToggle = () => {
-    const nextLanguage = normalizedLanguage === "ru" ? "en" : "ru";
     void i18n.changeLanguage(nextLanguage);
   };
 
