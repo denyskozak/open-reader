@@ -47,7 +47,7 @@ export function HeaderBar(): JSX.Element {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <img
-            src="/logo.webp"
+            src="/logo-v-1.webp"
             alt={t("app.name")}
             style={{ width: 32, height: 32, borderRadius: 8 }}
           />

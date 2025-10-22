@@ -66,7 +66,7 @@ function SplashScreen({ visible }: { visible: boolean }): JSX.Element | null {
       {/*  }}*/}
       {/*>*/}
         <img
-          src="/logo.webp"
+          src="/logo-v-1.webp"
           alt="Open Reader logo"
           style={{
             width: 96,
