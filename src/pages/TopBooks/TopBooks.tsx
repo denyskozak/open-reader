@@ -12,6 +12,7 @@ import {
   isSpecialCategoryId,
 } from "@/entities/category/customCategories";
 import { BookCard } from "@/entities/book/components/BookCard";
+import { useScrollRestoration } from "@/shared/hooks/useScrollRestoration";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { ErrorBanner } from "@/shared/ui/ErrorBanner";
 import { BookCardSkeleton } from "@/shared/ui/Skeletons";
@@ -26,6 +27,8 @@ export default function TopBooks(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [refreshToken, setRefreshToken] = useState(0);
+
+  useScrollRestoration(`top-categories-${categoryId ?? type ?? "unknown"}`);
 
   const categoryTitle = useMemo(
     () => (category ? t(category.titleKey) : ""),
