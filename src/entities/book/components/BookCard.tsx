@@ -20,8 +20,8 @@ export function BookCard({ book, onClick }: BookCardProps): JSX.Element {
       aria-label={t("book.cardAria", { title: book.title })}
       style={{ textDecoration: "none", color: "inherit", display: "flex", justifyContent: "center" }}
     >
-      <Card style={{ borderRadius: 20, overflow: "hidden" }}>
-        <div style={{ position: "relative", width: "80vw", aspectRatio: "3 / 3", background: "var(--app-section-color)" }}>
+      <Card style={{ width: '100%', borderRadius: 20, overflow: "hidden" }}>
+        <div style={{ position: "relative", aspectRatio: "3 / 3", background: "var(--app-section-color)" }}>
           <img
             src={`/images/books/${book.id}.jpg`}
             alt={t("book.coverAlt", { title: book.title })}
