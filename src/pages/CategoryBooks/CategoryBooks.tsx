@@ -10,6 +10,7 @@ import type { Category } from "@/entities/category/types";
 import { BookCard } from "@/entities/book/components/BookCard";
 import { useDebouncedValue } from "@/shared/hooks/useDebouncedValue";
 import { useIntersectionObserver } from "@/shared/hooks/useIntersectionObserver";
+import { useScrollRestoration } from "@/shared/hooks/useScrollRestoration";
 import type { BookSort } from "@/shared/lib/bookSort";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { ErrorBanner } from "@/shared/ui/ErrorBanner";
@@ -29,6 +30,8 @@ export default function CategoryBooks(): JSX.Element {
   const [sort, setSort] = useState<BookSort>("popular");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const debouncedSearch = useDebouncedValue(search, 250);
+
+  useScrollRestoration(`category-${id ?? "unknown"}`);
 
   const language = i18n.language;
   const availableTags = useMemo(

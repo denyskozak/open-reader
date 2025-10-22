@@ -14,6 +14,7 @@ import {
 } from "@/entities/category/customCategories";
 import { catalogApi } from "@/entities/book/api";
 import { useDebouncedValue } from "@/shared/hooks/useDebouncedValue";
+import { useScrollRestoration } from "@/shared/hooks/useScrollRestoration";
 import { EmptyState } from "@/shared/ui/EmptyState";
 import { ErrorBanner } from "@/shared/ui/ErrorBanner";
 import { CategoryTileSkeleton } from "@/shared/ui/Skeletons";
@@ -27,6 +28,9 @@ export default function HomeCategories(): JSX.Element {
   const [error, setError] = useState<string | null>(null);
   const [refreshToken, setRefreshToken] = useState(0);
   const debouncedSearch = useDebouncedValue(search, 250);
+  const normalizedSearch = debouncedSearch.trim().toLocaleLowerCase();
+
+  useScrollRestoration(`home-categories-${normalizedSearch || "all"}`);
 
   const translatedSpecialCategories = useMemo<SpecialCategory[]>(
     () =>
@@ -67,8 +71,6 @@ export default function HomeCategories(): JSX.Element {
       cancelled = true;
     };
   }, [debouncedSearch, refreshToken, t]);
-
-  const normalizedSearch = debouncedSearch.trim().toLocaleLowerCase();
 
   const specialCategories: SpecialCategory[] = normalizedSearch
     ? translatedSpecialCategories.filter((category) =>
