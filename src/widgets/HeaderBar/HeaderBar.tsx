@@ -46,7 +46,12 @@ export function HeaderBar(): JSX.Element {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}> 
+          <img
+            src="/logo.webp"
+            alt={t("app.name")}
+            style={{ width: 32, height: 32, borderRadius: 8 }}
+          />
+          <Title level="2" weight="2" style={{ cursor: "pointer" }} onClick={() => navigate("/")}>
             {t("app.name")}
           </Title>
         </div>
