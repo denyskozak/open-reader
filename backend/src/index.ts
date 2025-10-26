@@ -1,32 +1,19 @@
 import { config } from 'dotenv';
-import { Hono } from 'hono';
-import { serve } from '@hono/node-server';
-import { requireTestEnv } from './middlewares/testEnv.js';
-import { purchasesRoutes } from './routes/purchases.js';
-import { starsRoutes } from './routes/stars.js';
-import { jsonError } from './utils/jsonError.js';
+import { createHTTPServer } from '@trpc/server/adapters/standalone';
+import { appRouter } from './trpc/root.js';
+import { createTRPCContext } from './trpc/context.js';
 
 config();
 
-const app = new Hono();
-
-app.use('/api/*', requireTestEnv);
-
-app.route('/', purchasesRoutes);
-app.route('/', starsRoutes);
-
-app.notFound((c) => jsonError(c, 404, 'Not Found'));
-
-app.onError((err, c) => {
-  console.error(err);
-  return jsonError(c, 500, 'Internal Server Error');
-});
-
 const port = Number(process.env.PORT) || 3000;
 
-serve({
-  fetch: app.fetch,
-  port,
+const server = createHTTPServer({
+  router: appRouter,
+  createContext: createTRPCContext,
 });
 
-console.log(`Server running on http://localhost:${port}`);
+server.listen(port);
+
+console.log(`tRPC server listening on http://localhost:${port}`);
+
+export type AppRouter = typeof appRouter;
