@@ -1,27 +1,22 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { Button, Modal, Title } from "@telegram-apps/telegram-ui";
-import { TonConnectButton } from "@tonconnect/ui-react";
+import { Button, Title } from "@telegram-apps/telegram-ui";
 import { useTranslation } from "react-i18next";
 
 import { useTheme } from "@/app/providers/ThemeProvider";
-import { useToast } from "@/shared/ui/ToastProvider";
-
-const WALLETS = ["Tonkeeper", "Wallet", "MyTonWallet"];
 
 export function HeaderBar(): JSX.Element {
   const navigate = useNavigate();
-  const { showToast } = useToast();
+  const location = useLocation();
   const theme = useTheme();
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [wallet, setWallet] = useState<string | null>(null);
   const { t } = useTranslation();
 
-  const handleSelect = (name: string) => {
-    setWallet(name);
-    setModalOpen(false);
-    showToast(t("header.wallet.connectedToast", { wallet: name }));
+  const isAccountActive = location.pathname.startsWith("/account");
+
+  const handleAccountClick = () => {
+    if (!isAccountActive) {
+      navigate("/account");
+    }
   };
 
   return (
@@ -55,28 +50,14 @@ export function HeaderBar(): JSX.Element {
             {t("app.name")}
           </Title>
         </div>
-        <div style={{ position: "relative" }}>
-          <TonConnectButton style={{ opacity: 0, pointerEvents: "none" }} />
-          <Button
-            size="s"
-            mode="outline"
-            style={{ position: "absolute", inset: 0 }}
-            onClick={() => setModalOpen(true)}
-          >
-            {wallet ? t("header.wallet.connected", { wallet }) : t("header.wallet.connect")}
-          </Button>
-        </div>
+        <Button
+          size="s"
+          mode={isAccountActive ? "filled" : "outline"}
+          onClick={handleAccountClick}
+        >
+          {t("header.account.button")}
+        </Button>
       </div>
-      <Modal open={isModalOpen} onOpenChange={setModalOpen}>
-        <Modal.Header>{t("header.wallet.select")}</Modal.Header>
-        <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 12 }}>
-          {WALLETS.map((name) => (
-            <Button key={name} size="m" mode="filled" onClick={() => handleSelect(name)}>
-              {name}
-            </Button>
-          ))}
-        </div>
-      </Modal>
     </header>
   );
 }

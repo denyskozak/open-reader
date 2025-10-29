@@ -12,6 +12,9 @@
   },
   "header": {
     "languageToggle": "Switch language (current: {{language}})",
+    "account": {
+      "button": "My account"
+    },
     "wallet": {
       "connect": "Connect wallet",
       "connected": "Wallet: {{wallet}}",
@@ -143,5 +146,51 @@
     "aria": "Category {{title}}",
     "booksCount": "{{count}} book",
     "booksCount_plural": "{{count}} books"
+  },
+  "account": {
+    "title": "My account",
+    "subtitle": "Manage your TON collectibles and share new stories.",
+    "menu": {
+      "myBooks": "My books",
+      "publish": "Publish a book"
+    },
+    "myBooks": {
+      "title": "My TON bookshelf",
+      "description": "NFT editions stored on the TON blockchain (demo data).",
+      "coverAlt": "Cover of {{title}}",
+      "tonBadge": "TON NFT",
+      "status": {
+        "owned": "Owned",
+        "listed": "Listed for sale"
+      },
+      "token": "Token ID {{token}}"
+    },
+    "publish": {
+      "title": "Publish a new book",
+      "description": "Prepare your manuscript and submit it for the TON marketplace.",
+      "form": {
+        "name": {
+          "label": "Book title",
+          "placeholder": "Enter the book title"
+        },
+        "author": {
+          "label": "Author",
+          "placeholder": "Enter the author name"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Short synopsis or pitch"
+        },
+        "file": {
+          "label": "EPUB file",
+          "cta": "Upload .epub",
+          "placeholder": "No file selected"
+        },
+        "submit": "Submit for review",
+        "notice": "Mock submission: the data will not be sent to the server."
+      },
+      "toastSuccess": "Book \"{{title}}\" submitted for review (demo).",
+      "toastFallbackTitle": "your book"
+    }
   }
 }

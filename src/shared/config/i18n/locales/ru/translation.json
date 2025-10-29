@@ -12,6 +12,9 @@
   },
   "header": {
     "languageToggle": "Сменить язык (текущий: {{language}})",
+    "account": {
+      "button": "Личный кабинет"
+    },
     "wallet": {
       "connect": "Подключить кошелёк",
       "connected": "Кошелёк: {{wallet}}",
@@ -149,5 +152,51 @@
     "booksCount_few": "{{count}} книги",
     "booksCount_many": "{{count}} книг",
     "booksCount_other": "{{count}} книг"
+  },
+  "account": {
+    "title": "Личный кабинет",
+    "subtitle": "Управляйте своими TON NFT и делитесь новыми историями.",
+    "menu": {
+      "myBooks": "Мои книги",
+      "publish": "Опубликовать книгу"
+    },
+    "myBooks": {
+      "title": "Моя TON-полка",
+      "description": "NFT-издания на блокчейне TON (демо-данные).",
+      "coverAlt": "Обложка «{{title}}»",
+      "tonBadge": "TON NFT",
+      "status": {
+        "owned": "Владею",
+        "listed": "Выставлена на продажу"
+      },
+      "token": "ID токена {{token}}"
+    },
+    "publish": {
+      "title": "Опубликовать новую книгу",
+      "description": "Подготовьте рукопись и отправьте её в маркетплейс TON.",
+      "form": {
+        "name": {
+          "label": "Название книги",
+          "placeholder": "Введите название книги"
+        },
+        "author": {
+          "label": "Автор",
+          "placeholder": "Введите имя автора"
+        },
+        "description": {
+          "label": "Описание",
+          "placeholder": "Краткая аннотация или питч"
+        },
+        "file": {
+          "label": "EPUB-файл",
+          "cta": "Загрузить .epub",
+          "placeholder": "Файл не выбран"
+        },
+        "submit": "Отправить на модерацию",
+        "notice": "Демо-отправка: данные не будут сохранены."
+      },
+      "toastSuccess": "Книга «{{title}}» отправлена на модерацию (демо).",
+      "toastFallbackTitle": "ваша книга"
+    }
   }
 }
