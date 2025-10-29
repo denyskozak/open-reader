@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProposalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model BookProposal {
+  id            String          @id @default(uuid())
+  title         String
+  author        String
+  description   String
+  tonStorageKey String          @map("ton_storage_key")
+  tonStorageUrl String          @map("ton_storage_url")
+  mimeType      String?         @map("mime_type")
+  fileName      String          @map("file_name")
+  fileSize      Int?            @map("file_size")
+  status        ProposalStatus  @default(PENDING)
+  reviewerNotes String?         @map("reviewer_notes")
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @updatedAt @map("updated_at")
+  books         Book[]
+
+  @@map("book_proposals")
+}
+
+model Book {
+  id            String         @id @default(uuid())
+  title         String
+  author        String
+  description   String
+  tonStorageKey String         @map("ton_storage_key")
+  tonStorageUrl String         @map("ton_storage_url")
+  mimeType      String?        @map("mime_type")
+  fileName      String         @map("file_name")
+  fileSize      Int?           @map("file_size")
+  proposalId    String?        @map("proposal_id")
+  proposal      BookProposal?  @relation(fields: [proposalId], references: [id])
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+
+  @@map("books")
+}

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { useTheme } from "@/app/providers/ThemeProvider";
 import { useToast } from "@/shared/ui/ToastProvider";
+import { submitBookProposal } from "@/entities/proposal/api";
 
 const BOOK_SECTION = "myBooks" as const;
 const PUBLISH_SECTION = "publish" as const;
@@ -46,21 +47,23 @@ type PublishFormState = {
   author: string;
   description: string;
   fileName: string;
+  file: File | null;
 };
 
-const initialFormState: PublishFormState = {
+const createInitialFormState = (): PublishFormState => ({
   title: "",
   author: "",
   description: "",
   fileName: "",
-};
+  file: null,
+});
 
 export default function MyAccount(): JSX.Element {
   const { t } = useTranslation();
   const theme = useTheme();
   const { showToast } = useToast();
   const [activeSection, setActiveSection] = useState<AccountSection>(BOOK_SECTION);
-  const [formState, setFormState] = useState<PublishFormState>(initialFormState);
+  const [formState, setFormState] = useState<PublishFormState>(() => createInitialFormState());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -79,22 +82,45 @@ export default function MyAccount(): JSX.Element {
 
   const handleFileSelect = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    setFormState((prev) => ({ ...prev, fileName: file ? file.name : "" }));
+    setFormState((prev) => ({
+      ...prev,
+      fileName: file ? file.name : "",
+      file: file ?? null,
+    }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (isSubmitting) {
       return;
     }
 
+    if (!formState.file) {
+      showToast(t("account.publish.toastMissingFile"));
+      return;
+    }
+
     setIsSubmitting(true);
-    window.setTimeout(() => {
+    try {
+      await submitBookProposal({
+        title: formState.title,
+        author: formState.author,
+        description: formState.description,
+        file: formState.file,
+      });
+
       const title = formState.title || t("account.publish.toastFallbackTitle");
       showToast(t("account.publish.toastSuccess", { title }));
-      setFormState(initialFormState);
+      setFormState(createInitialFormState());
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("Failed to submit book proposal", error);
+      showToast(t("account.publish.toastError"));
+    } finally {
       setIsSubmitting(false);
-    }, 800);
+    }
   };
 
   return (
@@ -252,7 +278,13 @@ export default function MyAccount(): JSX.Element {
                   </Text>
                 </div>
               </div>
-              <Button type="submit" mode="filled" size="m" loading={isSubmitting}>
+              <Button
+                type="submit"
+                mode="filled"
+                size="m"
+                loading={isSubmitting}
+                disabled={!formState.file}
+              >
                 {t("account.publish.form.submit")}
               </Button>
             </form>
