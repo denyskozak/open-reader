@@ -28,6 +28,7 @@ model BookProposal {
   createdAt     DateTime        @default(now()) @map("created_at")
   updatedAt     DateTime        @updatedAt @map("updated_at")
   books         Book[]
+  votes         ProposalVote[]
 
   @@map("book_proposals")
 }
@@ -48,4 +49,16 @@ model Book {
   updatedAt     DateTime       @updatedAt @map("updated_at")
 
   @@map("books")
+}
+
+model ProposalVote {
+  id             String        @id @default(uuid())
+  proposalId     String        @map("proposal_id")
+  proposal       BookProposal  @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  telegramUserId String        @map("telegram_user_id")
+  isPositive     Boolean       @map("is_positive")
+  createdAt      DateTime      @default(now()) @map("created_at")
+
+  @@unique([proposalId, telegramUserId])
+  @@map("proposal_votes")
 }
