@@ -187,10 +187,12 @@
           "placeholder": "No file selected"
         },
         "submit": "Submit for review",
-        "notice": "Mock submission: the data will not be sent to the server."
+        "notice": "Your manuscript will be uploaded to TON Storage via our server."
       },
-      "toastSuccess": "Book \"{{title}}\" submitted for review (demo).",
-      "toastFallbackTitle": "your book"
+      "toastSuccess": "Book \"{{title}}\" submitted for review.",
+      "toastFallbackTitle": "your book",
+      "toastError": "Failed to submit the book. Try again later.",
+      "toastMissingFile": "Attach the EPUB file before submitting."
     }
   }
 }
