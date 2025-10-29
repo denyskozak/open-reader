@@ -152,7 +152,8 @@
     "subtitle": "Manage your TON collectibles and share new stories.",
     "menu": {
       "myBooks": "My books",
-      "publish": "Publish a book"
+      "publish": "Publish a book",
+      "voting": "Voting"
     },
     "myBooks": {
       "title": "My TON bookshelf",
@@ -193,6 +194,31 @@
       "toastFallbackTitle": "your book",
       "toastError": "Failed to submit the book. Try again later.",
       "toastMissingFile": "Attach the EPUB file before submitting."
+    },
+    "voting": {
+      "title": "Editorial voting",
+      "description": "Review incoming book proposals and decide their future.",
+      "threshold": "More than 50% approvals are required. Authorized voters: {{count}}.",
+      "notTelegram": "Open the mini app inside Telegram to participate in voting.",
+      "notAllowed": "Voting is limited to the editorial team.",
+      "empty": "No book proposals are waiting for your vote.",
+      "loading": "Loading proposals...",
+      "loadError": "Failed to load proposals.",
+      "progress": "{{positive}} / {{total}} approvals • {{negative}} rejections",
+      "youVoted": {
+        "approve": "You voted to approve this book.",
+        "reject": "You voted to reject this book."
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject"
+      },
+      "toast": {
+        "submitted": "Vote saved",
+        "approved": "Proposal approved and moved to the library",
+        "rejected": "Proposal rejected",
+        "error": "Could not submit the vote. Try again later."
+      }
     }
   }
 }
